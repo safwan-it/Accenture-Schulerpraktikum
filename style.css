@@ -13,19 +13,6 @@
     box-sizing: border-box;
 }
 
-.card-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
-    margin-bottom: 10px;
-}
-
-.card-icon img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-}
 
 
 body {
@@ -106,5 +93,10 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 60px;
+}
+
+.card-icon img[alt="HTML Logo"] {
+    width: 80px;
+    height: 80px;
 }
 
