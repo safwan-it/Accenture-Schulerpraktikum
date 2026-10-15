@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Skills | Accenture Schülerpraktikum</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="teamb.css">
+</head>
+
+<body>
+    <header>
+        <h1>Coding Skills</h1>
+        <p>Was du im Schülerpraktikum technisch lernst</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="coding.html" class="active">Coding Skills</a>
+        <a href="eltern.html">Für Eltern</a>
+        <a href="vorbereitung.html">Vorbereitung</a>
+    </nav>
+
+    <main>
+        <!-- ===== Teil 1: Cards (Person 1) ===== -->
+        <section id="cards">
+            <h2>Unsere Technologien</h2>
+            <p>In der Codingwoche haben wir mit vier Technologien gearbeitet. Klick auf „Mehr anzeigen“, um mehr zu erfahren.</p>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">&lt;/&gt;</div>
+                    <h3>HTML</h3>
+                    <p>Das Grundgerüst jeder Webseite. Mit HTML legt man fest, <strong>was</strong> auf der Seite steht.</p>
+                    <button class="mehr-button">Mehr anzeigen</button>
+                    <p class="mehr-text">Mit Tags wie &lt;h1&gt;, &lt;p&gt; oder &lt;img&gt; baut man Überschriften, Texte und Bilder ein.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">{ }</div>
+                    <h3>CSS</h3>
+                    <p>Gestaltet die Seite. Mit CSS bestimmt man, <strong>wie</strong> alles aussieht.</p>
+                    <button class="mehr-button">Mehr anzeigen</button>
+                    <p class="mehr-text">Farben, Schriften, Abstände und Layouts wie Flexbox, mit dem diese Cards nebeneinander stehen.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">JS</div>
+                    <h3>JavaScript</h3>
+                    <p>Macht die Seite <strong>interaktiv</strong>, zum Beispiel Buttons, Menüs oder Animationen.</p>
+                    <button class="mehr-button">Mehr anzeigen</button>
+                    <p class="mehr-text">Auch der „Mehr anzeigen“-Button, den du gerade benutzt, funktioniert mit JavaScript.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">git</div>
+                    <h3>Git</h3>
+                    <p>Speichert Versionen des Codes und macht <strong>Teamarbeit</strong> möglich.</p>
+                    <button class="mehr-button">Mehr anzeigen</button>
+                    <p class="mehr-text">Mit Branches und Pull Requests arbeiten mehrere Leute gleichzeitig am selben Projekt, so wie wir an dieser Website.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Teil 2: Übungen (Person 2) ===== -->
+        <section id="uebungen">
+            <h2>Unsere Übungen</h2>
+
+            <div class="uebung">
+                <h3>Persönliche Profilseite</h3>
+                <p>Unsere erste eigene Webseite mit Bild, Text und Link.</p>
+                <pre><code>&lt;h2&gt;Max Mustermann&lt;/h2&gt;
+&lt;img src="profil.jpg" alt="Profilbild"&gt;
+&lt;p&gt;Ich interessiere mich für Programmierung.&lt;/p&gt;</code></pre>
+            </div>
+
+            <div class="uebung">
+                <h3>Merge-Konflikt mit Git</h3>
+                <p>Alle haben gleichzeitig dieselbe Zeile in der readme.md geändert. So haben wir gelernt, Merge-Konflikte zu lösen.</p>
+                <pre><code>git add .
+git commit -m "my first commit"
+git push</code></pre>
+            </div>
+
+            <div class="uebung">
+                <h3>Team Presentation Page</h3>
+                <p>Eine gemeinsame Teamseite, bei der jeder in seinem eigenen Branch gearbeitet hat.</p>
+                <!-- Hier könnt ihr einen Screenshot einfügen: -->
+                <!-- <img src="images/teamb/teampage.png" alt="Screenshot der Team Page"> -->
+            </div>
+        </section>
+
+        <!-- ===== Teil 3: Wofür nutzt man das? (Person 3) ===== -->
+        <section id="nutzen">
+            <h2>Wofür nutzt man das?</h2>
+            <ul class="nutzen-liste">
+                <li><strong>HTML &amp; CSS:</strong> jede Webseite, zum Beispiel Online-Shops oder Firmenseiten</li>
+                <li><strong>JavaScript:</strong> interaktive Web-Apps, Formulare prüfen, Karten und Animationen</li>
+                <li><strong>Git:</strong> in fast jedem Softwareunternehmen, damit Teams gemeinsam am Code arbeiten können</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Accenture Schülerpraktikum | Team B</p>
+    </footer>
+
+    <script src="teamb.js"></script>
+</body>
+
+</html>

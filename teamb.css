@@ -1,0 +1,102 @@
+/* ===== Nur für die Seite von Team B ===== */
+
+/* Cards nebeneinander mit Flexbox, maximal 6 pro Zeile */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.card {
+    flex: 1 1 calc(100% / 6 - 20px);
+    min-width: 200px;
+    background: var(--weiss);
+    border: 2px solid var(--lila-hell);
+    border-top: 6px solid var(--lila);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(70, 0, 115, 0.08);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: var(--lila-hell);
+    color: var(--lila-dunkel);
+    font-size: 1.6rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card h3 {
+    color: var(--lila-sehr-dunkel);
+}
+
+.mehr-button {
+    background: var(--lila);
+    color: var(--weiss);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.mehr-button:hover {
+    background: var(--lila-dunkel);
+}
+
+/* Versteckter Text, wird per JavaScript angezeigt */
+.mehr-text {
+    display: none;
+    background: var(--lila-hell);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+.mehr-text.sichtbar {
+    display: block;
+}
+
+/* Übungen */
+.uebung {
+    background: var(--lila-hell);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.uebung h3 {
+    margin-top: 0;
+    color: var(--lila-sehr-dunkel);
+}
+
+.uebung img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+pre {
+    background: var(--lila-sehr-dunkel);
+    color: var(--weiss);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+/* Wofür nutzt man das? */
+.nutzen-liste li {
+    margin-bottom: 10px;
+}
