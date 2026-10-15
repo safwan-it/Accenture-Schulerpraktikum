@@ -165,3 +165,24 @@ pre {
 .nutzen-liste li {
     margin-bottom: 10px;
 }
+
+
+.card-icon img[alt="HTML Logo"] {
+    width: 80px;
+    height: 80px;
+}
+
+.card-icon img[alt="CSS Logo"] {
+    width: 55px;
+    height: 55px;
+}
+
+.card-icon img[alt="JavaScript Logo"] {
+    width: 65px;
+    height: 65px;
+}
+
+.card-icon img[alt="Git Logo"] {
+    width: 65px;
+    height: 65px;
+}
