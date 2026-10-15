@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welche Technologien wir im Accenture Schülerpraktikum gelernt haben: HTML, CSS, JavaScript und Git – inklusive Übungen und Aufgaben mit Lösungen.">
+    <title>Coding Skills | Accenture Schülerpraktikum</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="teamb.css">
+</head>
+
+<body>
+    <header>
+        <h1>Coding Skills</h1>
+        <p>Was du im Schülerpraktikum technisch lernst</p>
+    </header>
+
+    <nav aria-label="Hauptnavigation">
+        <a href="index.html">Home</a>
+        <a href="coding.html" class="active" aria-current="page">Coding Skills</a>
+        <a href="eltern.html">Für Eltern</a>
+        <a href="vorbereitung.html">Vorbereitung</a>
+    </nav>
+
+    <main>
+        <!-- ===== Teil 1: Cards (Person 1) ===== -->
+        <section id="cards">
+            <h2>Unsere Technik Woche</h2>
+            <p>In der Codingwoche haben wir mit vier Technologien gearbeitet. Klick auf „Mehr anzeigen“, um mehr zu erfahren.</p>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon"><img src="images/teamb/html.png" alt="HTML Logo"></div>
+                    <h3>HTML</h3>
+                    <p>Mit <strong>HTML</strong> haben wir die Grundlagen gelernt und eine eigene Page erstellt.</p>
+                    <button class="mehr-button">Mehr anzeigen</button>
+                    <p class="mehr-text">Mit Tags wie &lt;h1&gt;, &lt;p&gt; oder &lt;img&gt; baut man Überschriften, Texte und Bilder ein.</p>
+                </div>
+
+                <div class="card">
+
+                    <div class="card-icon"><img src="images/teamb/css.png" alt="CSS Logo"></div>
+                    <h3>CSS</h3>
+                    <p>Mit <strong>CSS</strong> haben wir das Aussehen unserer eigenen Page verbessert</p>
+                    <button class="mehr-button">Mehr anzeigen</button>
+                    <p class="mehr-text">Farben, Schriften, Abstände und Layouts wie Flexbox, mit dem diese Cards nebeneinander stehen.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><img src="images/teamb/js.png" alt="JavaScript Logo"></div>
+                    <h3>JavaScript</h3>
+                    <p>Macht die Seite <strong>interaktiv</strong>, zum Beispiel Buttons, Menüs oder Animationen.</p>
+                    <button class="mehr-button" aria-expanded="false">Mehr anzeigen</button>
+                    <p class="mehr-text">Auch der „Mehr anzeigen“-Button, den du gerade benutzt, funktioniert mit JavaScript.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><img src="images/teamb/Github.png" alt="Git Logo"></div>
+                    <h3>Git</h3>
+                    <p>Speichert Versionen des Codes und macht <strong>Teamarbeit</strong> möglich.</p>
+                    <button class="mehr-button" aria-expanded="false">Mehr anzeigen</button>
+                    <p class="mehr-text">Mit Branches und Pull Requests arbeiten mehrere Leute gleichzeitig am selben Projekt, so wie wir an dieser Website.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Teil 2: Übungen (Person 2) ===== -->
+        <section id="uebungen">
+            <h2>Unsere Übungen</h2>
+
+            <figure class="uebung">
+                <h3>Persönliche Profilseite</h3>
+                <p>Unsere erste eigene Webseite mit Bild, Text und Link.</p>
+                <pre><code>&lt;h2&gt;Max Mustermann&lt;/h2&gt;
+&lt;img src="profil.jpg" alt="Profilbild"&gt;
+&lt;p&gt;Ich interessiere mich für Programmierung.&lt;/p&gt;</code></pre>
+                <img src="images/profilseite.svg" alt="Screenshot der persönlichen Profilseite" class="uebung-bild" loading="lazy">
+                <figcaption>So sieht unsere Profilseite im Browser aus.</figcaption>
+            </figure>
+
+            <figure class="uebung">
+                <h3>Merge-Konflikt mit Git</h3>
+                <p>Alle haben gleichzeitig dieselbe Zeile in der readme.md geändert. So haben wir gelernt, Merge-Konflikte zu lösen.</p>
+                <pre><code>git add .
+git commit -m "my first commit"
+git push</code></pre>
+                <img src="images/merge-konflikt.svg" alt="Screenshot eines Git-Merge-Konflikts im Terminal" class="uebung-bild" loading="lazy">
+                <figcaption>Ein Merge-Konflikt im Terminal – mit &lt;&lt;&lt;&lt;&lt; und &gt;&gt;&gt; markiert.</figcaption>
+            </figure>
+
+            <figure class="uebung">
+                <h3>Team Presentation Page</h3>
+                <p>Eine gemeinsame Teamseite, bei der jeder in seinem eigenen Branch gearbeitet hat.</p>
+                <img src="images/teampage.svg" alt="Screenshot der Team Presentation Page" class="uebung-bild" loading="lazy">
+                <figcaption>Unsere gemeinsame Teamseite, zusammengeführt aus allen Branches.</figcaption>
+            </figure>
+        </section>
+
+        <!-- ===== Teil 2b: Aufgaben mit Lösungen als Foto (Person 2) ===== -->
+        <section id="quiz">
+            <h2>Rätsel: Was ist die Antwort?</h2>
+            <p>Hier sind drei Aufgaben aus der Codingwoche. Überleg erst selbst, dann klick auf „Antwort anzeigen“ – die Lösung steckt im Bild.</p>
+
+            <div class="quiz-aufgabe">
+                <h3>Aufgabe 1: Welcher Tag macht eine Überschrift?</h3>
+                <p>Welches HTML-Tag erzeugt die <strong>größte Überschrift</strong> auf einer Seite?</p>
+                <button class="antwort-button" aria-expanded="false">Antwort anzeigen</button>
+                <img class="antwort-bild" src="images/antwort-1.svg" alt="Lösung: Das h1-Tag erzeugt die größte Überschrift" loading="lazy">
+            </div>
+
+            <div class="quiz-aufgabe">
+                <h3>Aufgabe 2: Wie färbe ich Text?</h3>
+                <p>Welche CSS-Eigenschaft färbt einen Text <strong>violett</strong> ein?</p>
+                <button class="antwort-button" aria-expanded="false">Antwort anzeigen</button>
+                <img class="antwort-bild" src="images/antwort-2.svg" alt="Lösung: color: violet; in CSS" loading="lazy">
+            </div>
+
+            <div class="quiz-aufgabe">
+                <h3>Aufgabe 3: Welcher Befehl speichert Änderungen?</h3>
+                <p>Welcher Git-Befehl nimmt deine Änderungen <strong>in die Versionsgeschichte</strong> auf?</p>
+                <button class="antwort-button" aria-expanded="false">Antwort anzeigen</button>
+                <img class="antwort-bild" src="images/antwort-3.svg" alt="Lösung: git commit -m speichert die Änderungen" loading="lazy">
+            </div>
+        </section>
+
+        <!-- ===== Teil 3: Wofür nutzt man das? (Person 3) ===== -->
+        <section id="nutzen">
+            <h2>Wofür nutzt man das?</h2>
+            <ul class="nutzen-liste">
+                <li><strong>HTML &amp; CSS:</strong> jede Webseite, zum Beispiel Online-Shops oder Firmenseiten</li>
+                <li><strong>JavaScript:</strong> interaktive Web-Apps, Formulare prüfen, Karten und Animationen</li>
+                <li><strong>Git:</strong> in fast jedem Softwareunternehmen, damit Teams gemeinsam am Code arbeiten können</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Accenture Schülerpraktikum | Team B</p>
+    </footer>
+
+    <script src="teamb.js"></script>
+</body>
+
+</html>

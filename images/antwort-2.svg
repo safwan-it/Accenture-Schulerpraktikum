@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="240" viewBox="0 0 520 240">
+  <rect width="520" height="240" fill="#460073"/>
+  <rect x="0" y="0" width="120" height="240" fill="#A100FF"/>
+  <text x="60" y="130" text-anchor="middle" font-family="Arial" font-size="28" fill="#FFFFFF" font-weight="bold">Lösung</text>
+  <text x="300" y="105" text-anchor="middle" font-family="Consolas, monospace" font-size="30" fill="#8AFF80">color: violet;</text>
+  <text x="300" y="155" text-anchor="middle" font-family="Arial" font-size="20" fill="#F3E6FF">Die CSS-Eigenschaft heißt color</text>
+</svg>
