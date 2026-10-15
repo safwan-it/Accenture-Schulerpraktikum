@@ -100,3 +100,17 @@ footer {
     height: 80px;
 }
 
+.card-icon img[alt="CSS Logo"] {
+    width: 55px;
+    height: 55px;
+}
+
+.card-icon img[alt="JavaScript Logo"] {
+    width: 65px;
+    height: 65px;
+}
+
+.card-icon img[alt="Git Logo"] {
+    width: 65px;
+    height: 65px;
+}
