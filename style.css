@@ -13,10 +13,16 @@
     box-sizing: border-box;
 }
 
-.card-icon img {
-    width: 60px;
-    height: 299;
+.card-icon-html img {
+    width: 100px;
+    height: auto;
 }
+
+.card-icon-css img {
+    width: 100px;
+    height: auto;
+}
+
 
 body {
     margin: 0;
@@ -97,3 +103,4 @@ footer {
     padding: 20px;
     margin-top: 60px;
 }
+
