@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="380" viewBox="0 0 600 380">
+  <rect width="600" height="380" fill="#F3E6FF"/>
+  <rect x="0" y="0" width="600" height="46" fill="#460073"/>
+  <rect x="14" y="12" width="90" height="8" rx="4" fill="#A100FF"/>
+  <text x="300" y="110" text-anchor="middle" font-family="Arial" font-size="26" fill="#460073" font-weight="bold">Unser Team B</text>
+  <circle cx="110" cy="200" r="40" fill="#A100FF"/>
+  <circle cx="250" cy="200" r="40" fill="#7500C0"/>
+  <circle cx="390" cy="200" r="40" fill="#A100FF"/>
+  <circle cx="530" cy="200" r="40" fill="#7500C0"/>
+  <text x="110" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#460073">Person 1</text>
+  <text x="250" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#460073">Person 2</text>
+  <text x="390" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#460073">Person 3</text>
+  <text x="530" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#460073">Person 4</text>
+  <text x="300" y="350" text-anchor="middle" font-family="Arial" font-size="20" fill="#460073" font-weight="bold">Platzhalter: teampage.png durch Screenshot ersetzen</text>
+</svg>
