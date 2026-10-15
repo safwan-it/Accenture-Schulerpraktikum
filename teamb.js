@@ -4,12 +4,22 @@ const buttons = document.querySelectorAll(".mehr-button");
 buttons.forEach(function (button) {
     button.addEventListener("click", function () {
         const text = button.nextElementSibling;
-        text.classList.toggle("sichtbar");
+        const sichtbar = text.classList.toggle("sichtbar");
 
-        if (text.classList.contains("sichtbar")) {
-            button.textContent = "Weniger anzeigen";
-        } else {
-            button.textContent = "Mehr anzeigen";
-        }
+        button.setAttribute("aria-expanded", sichtbar);
+        button.textContent = sichtbar ? "Weniger anzeigen" : "Mehr anzeigen";
+    });
+});
+
+// "Antwort anzeigen"-Buttons im Quiz – zeigt das Antwort-Foto
+const antwortButtons = document.querySelectorAll(".antwort-button");
+
+antwortButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        const bild = button.nextElementSibling;
+        const sichtbar = bild.classList.toggle("sichtbar");
+
+        button.setAttribute("aria-expanded", sichtbar);
+        button.textContent = sichtbar ? "Antwort verstecken" : "Antwort anzeigen";
     });
 });

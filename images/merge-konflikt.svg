@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="380" viewBox="0 0 600 380">
+  <rect width="600" height="380" fill="#1E1226"/>
+  <text x="24" y="40" font-family="Consolas, monospace" font-size="18" fill="#8AFF80">PS C:\praktikum&gt; git merge feature-branch</text>
+  <text x="24" y="80" font-family="Consolas, monospace" font-size="18" fill="#FFD580">Auto-merging readme.md</text>
+  <text x="24" y="110" font-family="Consolas, monospace" font-size="18" fill="#FF8080">CONFLICT (content): Merge conflict in readme.md</text>
+  <text x="24" y="140" font-family="Consolas, monospace" font-size="18" fill="#FF8080">Automatic merge failed; fix conflicts and commit.</text>
+  <text x="24" y="200" font-family="Consolas, monospace" font-size="18" fill="#8AFF80">&lt;&lt;&lt;&lt;&lt; HEAD</text>
+  <text x="24" y="230" font-family="Consolas, monospace" font-size="18" fill="#FFFFFF">Team B: Willkommen!</text>
+  <text x="24" y="260" font-family="Consolas, monospace" font-size="18" fill="#FF8080">=======</text>
+  <text x="24" y="290" font-family="Consolas, monospace" font-size="18" fill="#80C4FF">Team B: Hallo alle zusammen!</text>
+  <text x="24" y="320" font-family="Consolas, monospace" font-size="18" fill="#8AFF80">&gt;&gt;&gt;&gt;&gt; feature-branch</text>
+</svg>

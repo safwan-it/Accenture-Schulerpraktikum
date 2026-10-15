@@ -88,6 +88,66 @@
     border-radius: 8px;
 }
 
+/* Bild + Bildunterschrift in den Übungen */
+.uebung-bild {
+    display: block;
+    margin: 15px auto 8px;
+    max-width: 100%;
+    border: 2px solid var(--lila);
+    box-shadow: 0 4px 12px rgba(70, 0, 115, 0.15);
+}
+
+.uebung figcaption {
+    text-align: center;
+    color: var(--grau);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* ===== Aufgaben mit Antwort-Fotos (Quiz) ===== */
+.quiz-aufgabe {
+    background: var(--weiss);
+    border: 2px solid var(--lila-hell);
+    border-left: 6px solid var(--lila);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(70, 0, 115, 0.08);
+}
+
+.quiz-aufgabe h3 {
+    margin-top: 0;
+    color: var(--lila-sehr-dunkel);
+}
+
+.antwort-button {
+    background: var(--lila);
+    color: var(--weiss);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.antwort-button:hover {
+    background: var(--lila-dunkel);
+}
+
+/* Verstecktes Antwort-Foto, wird per JavaScript angezeigt */
+.antwort-bild {
+    display: none;
+    max-width: 100%;
+    margin-top: 15px;
+    border: 3px solid var(--lila);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(70, 0, 115, 0.2);
+}
+
+.antwort-bild.sichtbar {
+    display: block;
+}
+
 pre {
     background: var(--lila-sehr-dunkel);
     color: var(--weiss);
