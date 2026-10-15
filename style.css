@@ -13,14 +13,18 @@
     box-sizing: border-box;
 }
 
-.card-icon-html img {
-    width: 100px;
-    height: auto;
+.card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin-bottom: 10px;
 }
 
-.card-icon-css img {
-    width: 100px;
-    height: auto;
+.card-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 
