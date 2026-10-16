@@ -1,0 +1,892 @@
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Zeichensatz UTF-8, damit ä, ö, ü und ß richtig angezeigt werden -->
+  <meta charset="UTF-8">
+  <!-- sorgt dafür, dass die Seite auf dem Handy nicht winzig klein dargestellt wird -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schülerpraktikum bei Accenture – Start</title>
+  <meta name="description" content="Alles über das virtuelle Schülerpraktikum bei Accenture – für Schüler ohne IT-Vorkenntnisse, IT-Interessierte, Eltern und zukünftige Praktikanten.">
+  <!-- gemeinsames Design für alle Seiten -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== GEMEINSAME NAVIGATION (auf allen 4 Seiten gleich, Änderungen nur über den Project Lead) ===== -->
+  <header class="navbar">
+    <nav class="container" aria-label="Hauptnavigation">
+      <a href="index.html" class="logo">accenture<span>&gt;</span> Schülerpraktikum</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="aktiv">Start &amp; Einsteiger</a></li>
+        <li><a href="coding.html">IT-Interessierte</a></li>
+        <li><a href="eltern.html">Eltern</a></li>
+        <li><a href="vorbereitung.html">Vorbereitung</a></li>
+      </ul>
+      <div class="nav-aktionen">
+        <button id="dark-btn" class="icon-btn" type="button" aria-label="Dunklen Modus aktivieren">🌙</button>
+        <button id="menu-btn" class="icon-btn" type="button" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== TEAM A: Home & Schüler ohne IT-Vorkenntnisse ===== -->
+  <main>
+
+    <!-- 1. Willkommenstext -->
+    <section class="hero">
+      <div class="container">
+        <span class="label">Für Schüler ohne IT-Vorkenntnisse</span>
+        <h1>Willkommen beim Schülerpraktikum bei Accenture!</h1>
+        <p>Du hast noch nie programmiert? Perfekt – genau für dich ist dieses Praktikum gemacht. In zwei Wochen lernst du, wie ein großes IT-Unternehmen arbeitet, übst wichtige Fähigkeiten für den Beruf und baust am Ende sogar deine eigene Website.</p>
+        <p>
+          <a href="#erwartung" class="btn">Was erwartet mich?</a>
+          <a href="vorbereitung.html#bewerben" class="btn hell">Jetzt bewerben</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. Was erwartet mich? (Erklärung des Praktikums) -->
+    <section id="erwartung">
+      <div class="container">
+        <h2>Was erwartet dich im Praktikum?</h2>
+        <p class="einleitung">Das Schülerpraktikum bei Accenture findet virtuell statt – du nimmst bequem von zu Hause aus mit deinem Laptop teil. In der ersten Woche lernst du Softskills wie Kommunikation, Teamarbeit und Präsentieren. In der zweiten Woche, der Codingwoche, baust du mit HTML, CSS und JavaScript deine ersten Webseiten und lernst, wie Teams mit Git zusammenarbeiten.</p>
+        <div class="card-reihe" style="margin-top:24px">
+          <div class="card">
+            <h3>💻 Virtuell</h3>
+            <p>Du arbeitest von zu Hause aus und triffst Betreuer und andere Schüler in Video-Calls.</p>
+          </div>
+          <div class="card">
+            <h3>🎓 Ohne Vorkenntnisse</h3>
+            <p>Wir starten bei null. Neugier und Lust auf Neues reichen völlig aus.</p>
+          </div>
+          <div class="card">
+            <h3>🤝 Im Team</h3>
+            <p>Du arbeitest wie ein echtes Entwicklungsteam an einem gemeinsamen Projekt.</p>
+          </div>
+          <div class="card">
+            <h3>🏆 Eigenes Ergebnis</h3>
+            <p>Am Ende präsentierst du eine Website, die du selbst mitgebaut hast.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Video (eingebettet mit einem iframe) -->
+    <section class="grau">
+      <div class="container">
+        <h2>Das Praktikum im Video</h2>
+        <p class="einleitung">Eine Schülerin erzählt, wie sie das virtuelle Schülerpraktikum bei Accenture erlebt hat.</p>
+        <div class="video-box">
+          <!-- Der YouTube-Player. "-FLZ0xPVOGg" ist die ID des Videos (steht in der YouTube-Adresse hinter "watch?v=") -->
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/-FLZ0xPVOGg"
+            title="Virtuelles Schülerpraktikum bei Accenture"
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+
+          <!-- Ersatz: Vorschaubild mit Link. Am Anfang versteckt (hidden).
+               JavaScript zeigt es nur, wenn die Seite per Doppelklick als Datei geöffnet wurde,
+               weil YouTube den Player dort nicht abspielt (Fehler 153). -->
+          <a class="video-vorschau" id="video-vorschau" href="https://www.youtube.com/watch?v=-FLZ0xPVOGg" target="_blank" rel="noopener" hidden>
+            <img src="https://i.ytimg.com/vi/-FLZ0xPVOGg/hqdefault.jpg" alt="Vorschaubild: Virtuelles Schülerpraktikum bei Accenture">
+            <span>▶ Video auf YouTube ansehen</span>
+          </a>
+        </div>
+        <p class="video-link">Video lädt nicht? <a href="https://www.youtube.com/watch?v=-FLZ0xPVOGg" target="_blank" rel="noopener">Direkt auf YouTube ansehen</a> (Kanal: Accenture DACH)</p>
+      </div>
+    </section>
+
+    <!-- 4. Roadmap: die Inhalte stehen im HTML, JavaScript zeigt sie beim Klick an -->
+    <section id="roadmap-bereich">
+      <div class="container">
+        <h2>Roadmap: So läuft dein Praktikum ab</h2>
+        <p class="einleitung">Wähle eine Woche und klicke auf einen Tag, um zu sehen, was dich erwartet.</p>
+
+        <div class="roadmap-wochen">
+          <button class="woche-btn aktiv" type="button" id="woche-1-btn">Woche 1 – Softskills</button>
+          <button class="woche-btn" type="button" id="woche-2-btn">Woche 2 – Coding</button>
+        </div>
+
+        <!-- Woche 1 -->
+        <ol class="roadmap" id="woche-1">
+          <li><button class="tag-btn" type="button" data-info="Begrüßung, Kennenlernen der Betreuer und der anderen Schüler, Einrichten von Microsoft Teams und eine erste Vorstellung von Accenture."><strong>Tag 1</strong><span>Kick-off</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Wie kommuniziere ich klar und freundlich – im Video-Call, im Chat und per E-Mail? Übungen in kleinen Gruppen."><strong>Tag 2</strong><span>Kommunikation</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Rollen im Team, gemeinsame Ziele und Feedback geben. Wir lösen eine Aufgabe, die nur im Team klappt."><strong>Tag 3</strong><span>Teamarbeit</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Aufbau einer guten Präsentation, Folien gestalten und frei sprechen. Jede Gruppe hält einen kurzen Vortrag."><strong>Tag 4</strong><span>Präsentieren</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Aufgaben planen und Prioritäten setzen. Abschluss der ersten Woche mit einer Feedbackrunde."><strong>Tag 5</strong><span>Zeitmanagement</span></button></li>
+        </ol>
+
+        <!-- Woche 2 (am Anfang versteckt durch das Attribut "hidden") -->
+        <ol class="roadmap" id="woche-2" hidden>
+          <li><button class="tag-btn" type="button" data-info="Wie ist eine Webseite aufgebaut? Wir schreiben unsere erste Seite mit Überschriften, Texten, Bildern und Links."><strong>Tag 6</strong><span>HTML</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Farben, Schriften, Abstände und Layout mit Flexbox – damit die Seite gut aussieht."><strong>Tag 7</strong><span>CSS</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Webseiten werden interaktiv: Buttons, die etwas tun, Variablen, Bedingungen und Funktionen."><strong>Tag 8</strong><span>JavaScript</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Wie arbeiten Entwicklerteams gemeinsam am gleichen Code? Commits, Branches und das gemeinsame Repository auf GitHub."><strong>Tag 9</strong><span>Git &amp; GitHub</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Wir setzen alles in einem Teamprojekt um und präsentieren die fertige Website."><strong>Tag 10</strong><span>Projekt &amp; Abschluss</span></button></li>
+        </ol>
+
+        <!-- Textfeld unter der Roadmap: JavaScript schreibt hier Titel und Text des angeklickten Tages hinein.
+             Die Überschrift ist am Anfang versteckt (hidden), man sieht nur den Hinweis. -->
+        <div class="tag-details" aria-live="polite">
+          <h3 id="tag-titel" hidden></h3>
+          <p id="tag-text">👆 Klicke auf einen Tag, um mehr darüber zu erfahren.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. IT-Begriffe für Anfänger (mit Suchfeld) -->
+    <section class="grau">
+      <div class="container" id="glossar-bereich">
+        <h2>IT-Begriffe einfach erklärt</h2>
+        <p class="einleitung">Viele Wörter aus der IT klingen erst einmal kompliziert. Hier findest du die wichtigsten Begriffe in einfacher Sprache.</p>
+        <!-- Suchfeld: JavaScript durchsucht beim Tippen alle Einträge mit der Klasse "suchbar" -->
+        <input type="search" class="suchfeld" id="glossar-suche" placeholder="🔍 Begriff suchen …" aria-label="Begriffe durchsuchen">
+        <!-- <dl> = Definitionsliste: <dt> ist der Begriff, <dd> die Erklärung -->
+        <dl class="glossar">
+          <div class="begriff suchbar"><dt>Code</dt><dd>Anweisungen, die ein Mensch für den Computer schreibt – wie ein Rezept, das der Computer Schritt für Schritt befolgt.</dd></div>
+          <div class="begriff suchbar"><dt>Programmiersprache</dt><dd>Eine Sprache, mit der man dem Computer sagt, was er tun soll, z. B. JavaScript oder Python.</dd></div>
+          <div class="begriff suchbar"><dt>Browser</dt><dd>Das Programm, mit dem du Webseiten öffnest, z. B. Chrome, Firefox oder Edge.</dd></div>
+          <div class="begriff suchbar"><dt>HTML</dt><dd>Baut das Gerüst einer Webseite: Überschriften, Texte, Bilder und Links.</dd></div>
+          <div class="begriff suchbar"><dt>CSS</dt><dd>Sorgt für das Aussehen einer Webseite: Farben, Schriften, Abstände und Anordnung.</dd></div>
+          <div class="begriff suchbar"><dt>JavaScript</dt><dd>Macht Webseiten interaktiv – zum Beispiel ein Button, der etwas aufklappt.</dd></div>
+          <div class="begriff suchbar"><dt>Git</dt><dd>Ein Werkzeug, das alle Änderungen am Code speichert. So kann man jederzeit zu einer älteren Version zurück.</dd></div>
+          <div class="begriff suchbar"><dt>Repository</dt><dd>Ein Projektordner, den Git verwaltet. Auf GitHub kann ein ganzes Team darauf zugreifen.</dd></div>
+          <div class="begriff suchbar"><dt>Commit</dt><dd>Ein gespeicherter Zwischenstand mit einer kurzen Beschreibung, was geändert wurde.</dd></div>
+          <div class="begriff suchbar"><dt>Bug</dt><dd>Ein Fehler im Programm. Das Finden und Beheben nennt man „Debugging“.</dd></div>
+          <div class="begriff suchbar"><dt>Cloud</dt><dd>Computer und Speicher im Internet, die man nutzen kann, ohne sie selbst zu besitzen.</dd></div>
+          <div class="begriff suchbar"><dt>Consulting</dt><dd>Beratung: Unternehmen holen sich Experten, die ihnen helfen, Probleme zu lösen – oft mit Technologie.</dd></div>
+        </dl>
+        <p class="keine-treffer" id="glossar-keine-treffer">Kein Begriff gefunden. Versuch es mit einem anderen Wort.</p>
+      </div>
+    </section>
+
+    <!-- 6. Softskills mit Bildern -->
+    <section>
+      <div class="container">
+        <h2>Softskills, die du kennenlernst</h2>
+        <p class="einleitung">Im Beruf zählt nicht nur Fachwissen. Diese Fähigkeiten üben wir im Praktikum gemeinsam.</p>
+        <div class="card-reihe">
+          <div class="card">
+            <img src="img/kommunikation.svg" alt="Symbol Sprechblase">
+            <h3>Kommunikation</h3>
+            <p>Klar und freundlich ausdrücken – im Video-Call, im Chat und per E-Mail.</p>
+          </div>
+          <div class="card">
+            <img src="img/teamarbeit.svg" alt="Symbol zwei Personen">
+            <h3>Teamarbeit</h3>
+            <p>Aufgaben aufteilen, sich gegenseitig helfen und gemeinsam ans Ziel kommen.</p>
+          </div>
+          <div class="card">
+            <img src="img/praesentieren.svg" alt="Symbol Präsentationstafel">
+            <h3>Präsentieren</h3>
+            <p>Ergebnisse verständlich vorstellen und vor anderen sicher sprechen.</p>
+          </div>
+          <div class="card">
+            <img src="img/zeitmanagement.svg" alt="Symbol Stoppuhr">
+            <h3>Zeitmanagement</h3>
+            <p>Aufgaben planen, Prioritäten setzen und Fristen einhalten.</p>
+          </div>
+          <div class="card">
+            <img src="img/feedback.svg" alt="Symbol Stern">
+            <h3>Feedback</h3>
+            <p>Konstruktive Rückmeldungen geben – und selbst daraus lernen.</p>
+          </div>
+          <div class="card">
+            <img src="img/problemloesung.svg" alt="Symbol Glühbirne">
+            <h3>Problemlösung</h3>
+            <p>Große Aufgaben in kleine Schritte zerlegen und kreativ Lösungen finden.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Wegweiser: Links zu den Bereichen der anderen Teams -->
+    <section class="grau">
+      <div class="container">
+        <h2>Wer bist du? Hier geht's zu deinem Bereich</h2>
+        <div class="card-reihe wegweiser">
+          <a href="#erwartung" class="card">
+            <h3>🌱 Ich habe noch keine IT-Erfahrung</h3>
+            <p>Du bist schon richtig! Hier auf der Startseite erfährst du, was dich erwartet.</p>
+            <span class="pfeil">Nach oben zur Übersicht ↑</span>
+          </a>
+          <a href="coding.html" class="card">
+            <h3>👩‍💻 Ich interessiere mich für IT</h3>
+            <p>Welche Technologien lernst du? Welche Übungen gibt es?</p>
+            <span class="pfeil">Zu den Coding Skills →</span>
+          </a>
+          <a href="eltern.html" class="card">
+            <h3>👨‍👩‍👧 Ich bin Elternteil</h3>
+            <p>Informationen über Accenture, Ablauf und Kontakt.</p>
+            <span class="pfeil">Zum Elternbereich →</span>
+          </a>
+          <a href="vorbereitung.html" class="card">
+            <h3>🎒 Ich habe einen Platz / will mich bewerben</h3>
+            <p>Bewerbung, Checkliste, Tipps und FAQ.</p>
+            <span class="pfeil">Zur Vorbereitung →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== GEMEINSAMER FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>© <span id="jahr">2026</span> Schülerprojekt im Rahmen des Accenture Schülerpraktikums</p>
+      <p><a href="index.html">Start &amp; Einsteiger</a> · <a href="coding.html">IT-Interessierte</a> · <a href="eltern.html">Eltern</a> · <a href="vorbereitung.html">Vorbereitung</a></p>
+    </div>
+  </footer>
+
+  <button id="nach-oben" type="button" aria-label="Nach oben scrollen">↑</button>
+  <!-- JavaScript ganz am Ende laden, damit alle HTML-Elemente schon existieren -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+```
+
+---
+
+## Teil 2: CSS – nur die Regeln, die die Startseite benutzt
+
+Weggelassen wurden die Abschnitte der anderen Teams (B, C, D) und die Bausteine „Hinweisbox“ und „Mehr anzeigen“, die auf der Startseite nicht vorkommen.
+
+```css
+/* =========================================================
+   Accenture Student Internship Portal – gemeinsames Stylesheet
+   Verantwortlich: Project Lead (Änderungen nur nach Absprache!)
+   Aufbau:
+     1. Variablen (Farben, Schriften)   – GEMEINSAM
+     2. Grundlayout, Navigation, Footer – GEMEINSAM
+     3. Bausteine (Cards, Buttons, ...) – GEMEINSAM
+     4. Team A – Startseite
+     5. Team B – Coding Skills
+     6. Team C – Eltern
+     7. Team D – Vorbereitung
+     8. Responsive & Extras
+   ========================================================= */
+
+/* ---------- 1. Variablen ---------- */
+:root {
+  --lila: #a100ff;          /* Akzentfarbe */
+  --lila-dunkel: #7500c0;
+  --lila-hell: #f3e6ff;
+  --text: #1d1d24;
+  --text-leise: #5a5a6a;
+  --hintergrund: #ffffff;
+  --flaeche: #f6f5f9;
+  --rand: #e2dfea;
+  --schatten: 0 4px 16px rgba(30, 0, 60, 0.08);
+  --radius: 12px;
+  --schrift: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --breite: 1100px;
+}
+
+/* Dark Mode (wird per JavaScript über die Klasse "dark" am <html> gesetzt) */
+html.dark {
+  --lila: #c266ff;
+  --lila-dunkel: #a100ff;
+  --lila-hell: #2c1a3d;
+  --text: #ecebf2;
+  --text-leise: #a9a7b8;
+  --hintergrund: #14131a;
+  --flaeche: #1e1c26;
+  --rand: #34313f;
+  --schatten: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- 2. Grundlayout ---------- */
+* { box-sizing: border-box; }
+
+/* Elemente mit dem Attribut "hidden" immer verstecken (auch wenn sie sonst display: flex haben) */
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--schrift);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--hintergrund);
+  transition: background 0.3s, color 0.3s;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--lila-dunkel); }
+html.dark a { color: var(--lila); }
+
+h1, h2, h3 { line-height: 1.25; }
+h2 { font-size: 1.8rem; margin-top: 0; }
+h2::after {               /* kleiner lila Strich unter jeder Überschrift */
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 8px;
+  background: var(--lila);
+  border-radius: 2px;
+}
+
+.container {
+  max-width: var(--breite);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+section { padding: 56px 0; }
+section.grau { background: var(--flaeche); }
+
+.einleitung { color: var(--text-leise); max-width: 750px; }
+
+/* Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--hintergrund);
+  border-bottom: 1px solid var(--rand);
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+}
+.logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--text) !important;
+}
+.logo span { color: var(--lila); }
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+.nav-links a:hover { background: var(--lila-hell); }
+.nav-links a.aktiv { background: var(--lila); color: #fff; }
+
+.nav-aktionen { display: flex; gap: 8px; align-items: center; }
+
+.icon-btn {
+  border: 1px solid var(--rand);
+  background: var(--flaeche);
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.icon-btn:hover { border-color: var(--lila); }
+#menu-btn { display: none; }
+
+/* Seitenkopf (Hero) */
+.hero {
+  background: linear-gradient(135deg, #460073 0%, #a100ff 100%);
+  color: #fff;
+  padding: 72px 0;
+}
+.hero h1 { font-size: 2.6rem; margin: 0 0 16px; }
+.hero p { font-size: 1.15rem; max-width: 680px; opacity: 0.95; }
+.hero .label {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* Footer */
+footer {
+  background: #1d1d24;
+  color: #cfcde0;
+  padding: 32px 0;
+  font-size: 0.95rem;
+}
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+footer a { color: #e2c4ff !important; }
+
+/* ---------- 3. Bausteine ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: 2px solid var(--lila);
+  background: var(--lila);
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+}
+.btn:hover { transform: translateY(-2px); background: var(--lila-dunkel); }
+.btn.hell { background: transparent; color: var(--lila-dunkel) !important; }
+.hero .btn.hell { color: #fff !important; border-color: #fff; }
+
+/* Card-Raster mit Flexbox */
+.card-reihe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  /* flex: wachsen schrumpfen Startbreite → jede Karte startet bei 220px und wird dann gleichmäßig breiter */
+  flex: 1 1 220px;
+  background: var(--hintergrund);
+  border: 1px solid var(--rand);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--schatten);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(100, 0, 160, 0.15); }
+.card img { width: 64px; height: 64px; margin-bottom: 12px; }
+.card h3 { margin: 0 0 8px; }
+.card p { margin: 0; color: var(--text-leise); }
+
+
+/* Suchfeld */
+.suchfeld {
+  width: 100%;
+  max-width: 420px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid var(--rand);
+  border-radius: 8px;
+  background: var(--hintergrund);
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.suchfeld:focus { outline: none; border-color: var(--lila); }
+.keine-treffer { display: none; color: var(--text-leise); font-style: italic; }
+
+/* Back to Top */
+#nach-oben {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--lila);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: var(--schatten);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+#nach-oben.sichtbar { opacity: 1; pointer-events: auto; }
+
+/* ---------- 4. Team A – Startseite ---------- */
+  /* aspect-ratio hält das Video immer im Breitbild-Format 16:9 */
+.video-box {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--schatten);
+}
+.video-box iframe { width: 100%; height: 100%; border: 0; }
+.video-link { margin-top: 12px; color: var(--text-leise); font-size: 0.95rem; }
+/* Vorschaubild, wenn die Seite als Datei geöffnet wird (siehe main.js) */
+.video-vorschau { position: relative; display: block; height: 100%; }
+.video-vorschau img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+.video-vorschau span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--lila);
+  color: #fff;
+  font-weight: 700;
+}
+.video-vorschau:hover span { background: var(--lila-dunkel); }
+
+/* Roadmap */
+.roadmap-wochen { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.woche-btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 2px solid var(--lila);
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+}
+.woche-btn.aktiv { background: var(--lila); color: #fff; }
+
+.roadmap {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.roadmap li { flex: 1; }
+.tag-btn {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 2px solid var(--rand);
+  background: var(--hintergrund);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.tag-btn:hover { border-color: var(--lila); transform: translateY(-2px); }
+/* "aktiv" setzt JavaScript beim angeklickten Tag */
+.tag-btn.aktiv { border-color: var(--lila); background: var(--lila-hell); }
+.tag-btn strong { display: block; color: var(--lila-dunkel); font-size: 0.85rem; }
+html.dark .tag-btn strong { color: var(--lila); }
+.tag-btn span { display: block; font-weight: 700; margin-top: 4px; }
+
+.tag-details {
+  margin-top: 16px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--hintergrund);
+  border: 1px solid var(--rand);
+  min-height: 90px;
+}
+.tag-details h3 { margin-top: 0; }
+
+/* Glossar */
+.glossar { display: flex; flex-wrap: wrap; gap: 16px; }
+.begriff {
+  flex: 1 1 300px;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+}
+.begriff dt { font-weight: 800; color: var(--lila-dunkel); }
+html.dark .begriff dt { color: var(--lila); }
+.begriff dd { margin: 4px 0 0; }
+
+/* Bereich-Wegweiser */
+.wegweiser .card { text-decoration: none; color: var(--text); }
+.wegweiser .card .pfeil { display: inline-block; margin-top: 12px; font-weight: 700; color: var(--lila-dunkel); }
+
+/* ---------- 8. Responsive (Smartphone) ---------- */
+@media (max-width: 860px) {
+  #menu-btn { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    padding: 12px 16px;
+    background: var(--hintergrund);
+    border-bottom: 1px solid var(--rand);
+  }
+  .nav-links.offen { display: flex; }
+  .roadmap { flex-direction: column; }
+  .hero h1 { font-size: 2rem; }
+}
+```
+
+---
+
+## Teil 3: JavaScript – nur die Funktionen der Startseite
+
+Weggelassen wurden die Funktionen der anderen Teams (Mehr anzeigen, Übungs-Filter, Checkliste, FAQ, E-Mail-Button).
+Ganz unten stehen nur die Aufrufe, die auf der Startseite etwas tun.
+
+```javascript
+/* =========================================================
+   Accenture Student Internship Portal – JavaScript
+
+   So ist jede Funktion aufgebaut (immer das gleiche Muster):
+     1. Element suchen      → document.querySelector("...")
+     2. Auf Klick warten    → element.addEventListener("click", function () { ... })
+     3. Etwas verändern     → Klasse an/aus, Text ändern, Element zeigen/verstecken
+
+   Jede Funktion prüft am Anfang, ob ihr Element auf der aktuellen
+   Seite existiert. Wenn nicht, hört sie sofort auf (return).
+   So gibt es keine Fehler in der Konsole.
+   ========================================================= */
+
+
+/* ---------- Hilfsfunktionen: im Browser speichern und laden ---------- */
+// localStorage merkt sich Werte, auch wenn man die Seite schließt.
+// "try/catch" bedeutet: Versuche es – und falls der Browser das Speichern verbietet,
+// passiert einfach nichts (statt einer Fehlermeldung).
+
+function speichern(name, wert) {
+  try {
+    localStorage.setItem(name, wert);
+  } catch (fehler) {
+    // Speichern nicht erlaubt → nichts tun
+  }
+}
+
+function laden(name) {
+  try {
+    return localStorage.getItem(name);
+  } catch (fehler) {
+    return null; // nichts gespeichert
+  }
+}
+
+
+/* ---------- 1. Dark Mode (gemeinsam, alle Seiten) ---------- */
+function darkModeEinrichten() {
+  const knopf = document.querySelector("#dark-btn");
+  const seite = document.documentElement; // das <html>-Element
+  if (!knopf) {
+    return;
+  }
+
+  // Beim Laden: Wurde früher der dunkle Modus gewählt?
+  if (laden("theme") === "dark") {
+    seite.classList.add("dark");
+  }
+  symbolAnpassen();
+
+  // Beim Klick: Modus wechseln und merken
+  knopf.addEventListener("click", function () {
+    if (seite.classList.contains("dark")) {
+      seite.classList.remove("dark");
+      speichern("theme", "light");
+    } else {
+      seite.classList.add("dark");
+      speichern("theme", "dark");
+    }
+    symbolAnpassen();
+  });
+
+  // Mond im hellen Modus, Sonne im dunklen Modus
+  function symbolAnpassen() {
+    if (seite.classList.contains("dark")) {
+      knopf.textContent = "☀️";
+      knopf.setAttribute("aria-label", "Hellen Modus aktivieren");
+    } else {
+      knopf.textContent = "🌙";
+      knopf.setAttribute("aria-label", "Dunklen Modus aktivieren");
+    }
+  }
+}
+
+
+/* ---------- 2. Menü-Button auf dem Handy (gemeinsam) ---------- */
+function menueEinrichten() {
+  const knopf = document.querySelector("#menu-btn");
+  const links = document.querySelector(".nav-links");
+  if (!knopf || !links) {
+    return;
+  }
+
+  knopf.addEventListener("click", function () {
+    // Die Klasse "offen" sorgt im CSS dafür, dass das Menü sichtbar wird
+    if (links.classList.contains("offen")) {
+      links.classList.remove("offen");
+      knopf.setAttribute("aria-expanded", "false");
+    } else {
+      links.classList.add("offen");
+      knopf.setAttribute("aria-expanded", "true");
+    }
+  });
+}
+
+
+/* ---------- 3. "Nach oben"-Button (gemeinsam) ---------- */
+function nachObenEinrichten() {
+  const knopf = document.querySelector("#nach-oben");
+  if (!knopf) {
+    return;
+  }
+
+  // Beim Scrollen: Button erst zeigen, wenn man mehr als 400 Pixel nach unten gescrollt hat
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 400) {
+      knopf.classList.add("sichtbar");
+    } else {
+      knopf.classList.remove("sichtbar");
+    }
+  });
+
+  // Beim Klick: sanft ganz nach oben scrollen
+  knopf.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+
+/* ---------- 5. Roadmap (Team A – Startseite) ---------- */
+// Die Texte der Tage stehen im HTML (Attribut data-info an jedem Tag-Button).
+// JavaScript macht nur zwei Dinge:
+//   a) Woche 1 / Woche 2 umschalten
+//   b) beim Klick auf einen Tag dessen Text unten anzeigen
+function roadmapEinrichten() {
+  const woche1Knopf = document.querySelector("#woche-1-btn");
+  const woche2Knopf = document.querySelector("#woche-2-btn");
+  const woche1Liste = document.querySelector("#woche-1");
+  const woche2Liste = document.querySelector("#woche-2");
+  const tagKnoepfe = document.querySelectorAll(".tag-btn");
+  const titel = document.querySelector("#tag-titel");
+  const text = document.querySelector("#tag-text");
+  if (!woche1Knopf) {
+    return; // nicht auf der Startseite
+  }
+
+  // a) Klick auf "Woche 1"
+  woche1Knopf.addEventListener("click", function () {
+    woche1Liste.hidden = false;   // Woche 1 zeigen
+    woche2Liste.hidden = true;    // Woche 2 verstecken
+    woche1Knopf.classList.add("aktiv");
+    woche2Knopf.classList.remove("aktiv");
+    hinweisZeigen();
+  });
+
+  // a) Klick auf "Woche 2"
+  woche2Knopf.addEventListener("click", function () {
+    woche1Liste.hidden = true;
+    woche2Liste.hidden = false;
+    woche1Knopf.classList.remove("aktiv");
+    woche2Knopf.classList.add("aktiv");
+    hinweisZeigen();
+  });
+
+  // b) Klick auf einen Tag
+  for (const knopf of tagKnoepfe) {
+    knopf.addEventListener("click", function () {
+      // zuerst bei allen Tagen die Markierung entfernen ...
+      for (const andererKnopf of tagKnoepfe) {
+        andererKnopf.classList.remove("aktiv");
+      }
+      // ... dann nur den angeklickten Tag markieren
+      knopf.classList.add("aktiv");
+
+      // Text aus dem HTML holen und unten anzeigen
+      const tag = knopf.querySelector("strong").textContent;   // z. B. "Tag 3"
+      const thema = knopf.querySelector("span").textContent;   // z. B. "Teamarbeit"
+      titel.textContent = tag + ": " + thema;
+      titel.hidden = false;
+      text.textContent = knopf.dataset.info;                  // liest data-info="..."
+    });
+  }
+
+  // Startzustand des Textfeldes: nur der Hinweis, keine Überschrift
+  function hinweisZeigen() {
+    titel.hidden = true;
+    text.textContent = "👆 Klicke auf einen Tag, um mehr darüber zu erfahren.";
+  }
+}
+
+
+/* ---------- 6. Video-Ersatz (Team A – Startseite) ---------- */
+// YouTube spielt eingebettete Videos nur auf echten Webseiten ab (Adresse beginnt mit http/https).
+// Öffnet man index.html per Doppelklick, beginnt die Adresse mit "file:" und YouTube zeigt "Fehler 153".
+// Nur in diesem Fall: Player entfernen und stattdessen das Vorschaubild zeigen (steht schon im HTML).
+function videoErsatzEinrichten() {
+  const player = document.querySelector(".video-box iframe");
+  const vorschau = document.querySelector("#video-vorschau");
+  if (!player || !vorschau) {
+    return;
+  }
+
+  if (window.location.protocol === "file:") {
+    player.remove();
+    vorschau.hidden = false;
+  }
+}
+
+
+/* ---------- 7. Suchfeld (Team A Glossar + Team D FAQ) ---------- */
+// Eine Funktion für beide Suchen. Man gibt ihr drei Dinge mit:
+//   suchfeldId   → das Eingabefeld
+//   eintraege    → alle Einträge, die durchsucht werden
+//   hinweisId    → der Text "Nichts gefunden"
+function sucheEinrichten(suchfeldId, eintraegeSelektor, hinweisId) {
+  const suchfeld = document.querySelector(suchfeldId);
+  const eintraege = document.querySelectorAll(eintraegeSelektor);
+  const hinweis = document.querySelector(hinweisId);
+  if (!suchfeld) {
+    return;
+  }
+
+  // "input" passiert bei jedem Buchstaben, den man tippt
+  suchfeld.addEventListener("input", function () {
+    const suchbegriff = suchfeld.value.toLowerCase().trim(); // klein geschrieben, ohne Leerzeichen am Rand
+    let treffer = 0;
+
+    for (const eintrag of eintraege) {
+      const eintragText = eintrag.textContent.toLowerCase();
+      if (eintragText.includes(suchbegriff)) {
+        eintrag.style.display = "";      // passt → normal anzeigen
+        treffer = treffer + 1;
+      } else {
+        eintrag.style.display = "none";  // passt nicht → verstecken
+      }
+    }
+
+    // Hinweis nur zeigen, wenn gar nichts gefunden wurde
+    if (treffer === 0) {
+      hinweis.style.display = "block";
+    } else {
+      hinweis.style.display = "none";
+    }
+  });
+}
+
+
+/* ---------- 12. Aktuelles Jahr im Footer (gemeinsam) ---------- */
+function jahrEinsetzen() {
+  const jahr = document.querySelector("#jahr");
+  if (jahr) {
+    jahr.textContent = new Date().getFullYear();
+  }
+}
+
+
+/* ---------- Start: die Funktionen der Startseite ausführen ---------- */
+darkModeEinrichten();
+menueEinrichten();
+nachObenEinrichten();
+roadmapEinrichten();
+videoErsatzEinrichten();
+sucheEinrichten("#glossar-suche", "#glossar-bereich .suchbar", "#glossar-keine-treffer");
+jahrEinsetzen();
+```
