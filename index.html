@@ -1,172 +1,247 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+  <!-- Zeichensatz UTF-8, damit ä, ö, ü und ß richtig angezeigt werden -->
   <meta charset="UTF-8">
+  <!-- sorgt dafür, dass die Seite auf dem Handy nicht winzig klein dargestellt wird -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vorbereitung auf das Praktikum</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Schülerpraktikum bei Accenture – Start</title>
+  <meta name="description" content="Alles über das virtuelle Schülerpraktikum bei Accenture – für Schüler ohne IT-Vorkenntnisse, IT-Interessierte, Eltern und zukünftige Praktikanten.">
+  <!-- gemeinsames Design für alle Seiten -->
+  <link rel="stylesheet" href="teama.css">
 </head>
 <body>
 
-  <!-- Kopfbereich -->
-  <header class="hero">
-    <p class="hero__label">Team D</p>
-    <h1>Vorbereitung auf das Praktikum</h1>
-    <p class="hero__text">
-      Du hast einen Platz im virtuellen Schülerpraktikum oder willst dich bewerben?
-      Hier findest du alles, was du vorher wissen solltest.
-    </p>
-    <nav class="hero__nav">
-      <a href="#bewerbung">Bewerbung</a>
-      <a href="#vorbereitung">Vorbereitung</a>
-      <a href="#checkliste">Checkliste</a>
-      <a href="#tipps">Tipps</a>
-      <a href="#faq">FAQ</a>
+  <!-- ===== GEMEINSAME NAVIGATION (auf allen 4 Seiten gleich, Änderungen nur über den Project Lead) ===== -->
+  <header class="navbar">
+    <nav class="container" aria-label="Hauptnavigation">
+      <a href="index.html" class="logo">accenture<span>&gt;</span> Schülerpraktikum</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="aktiv">Start &amp; Einsteiger</a></li>
+        <li><a href="coding.html">IT-Interessierte</a></li>
+        <li><a href="eltern.html">Eltern</a></li>
+        <li><a href="vorbereitung.html">Vorbereitung</a></li>
+      </ul>
+      <div class="nav-aktionen">
+        <button id="dark-btn" class="icon-btn" type="button" aria-label="Dunklen Modus aktivieren">🌙</button>
+        <button id="menu-btn" class="icon-btn" type="button" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+      </div>
     </nav>
   </header>
 
+  <!-- ===== TEAM A: Home & Schüler ohne IT-Vorkenntnisse ===== -->
   <main>
 
-    <!-- 1. Bewerbungsprozess -->
-    <section id="bewerbung" class="section">
-      <h2>So läuft die Bewerbung ab</h2>
-      <ol class="steps">
-        <li class="step">
-          <span class="step__nr">1</span>
-          <h3>Ausschreibung finden</h3>
-          <p>Das Schülerpraktikum wird auf der Karriereseite von Accenture ausgeschrieben. Lies dir die Infos zu Zeitraum und Ablauf genau durch.</p>
-        </li>
-        <li class="step">
-          <span class="step__nr">2</span>
-          <h3>Unterlagen vorbereiten</h3>
-          <p>Meist brauchst du einen kurzen Lebenslauf, ein Anschreiben und dein letztes Zeugnis. Schreib im Anschreiben, warum dich Technik und IT interessieren.</p>
-        </li>
-        <li class="step">
-          <span class="step__nr">3</span>
-          <h3>Bewerbung abschicken</h3>
-          <p>Schick deine Unterlagen ab und prüf vorher, ob alles vollständig ist. Eine saubere Mail-Adresse wirkt professioneller.</p>
-        </li>
-        <li class="step">
-          <span class="step__nr">4</span>
-          <h3>Zusage &amp; Infos</h3>
-          <p>Bei einer Zusage bekommst du eine Mail mit allen Infos zum Ablauf. Kläre früh mit deiner Schule, ob du freigestellt wirst.</p>
-        </li>
-      </ol>
-    </section>
-
-    <!-- 2. Vorbereitung auf die Woche -->
-    <section id="vorbereitung" class="section section--grey">
-      <h2>So bereitest du dich auf die Woche vor</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>💻 Technik testen</h3>
-          <p>Das Praktikum findet online statt. Installiere Microsoft Teams vorher und teste Kamera, Mikrofon und Internetverbindung.</p>
-        </article>
-        <article class="card">
-          <h3>🏢 Accenture kennenlernen</h3>
-          <p>Schau dir an, was Accenture macht: Beratung, Technologie und digitale Lösungen für andere Unternehmen.</p>
-        </article>
-        <article class="card">
-          <h3>🧠 Grundlagen auffrischen</h3>
-          <p>In der Codingwoche geht es um HTML, CSS, JavaScript und Git. Ein kurzes Einsteiger-Tutorial vorher hilft enorm.</p>
-        </article>
-        <article class="card">
-          <h3>🗓️ Zeit freihalten</h3>
-          <p>Plane die Praktikumszeiten fest ein. Ein ruhiger Arbeitsplatz ohne Ablenkung macht die Teamarbeit leichter.</p>
-        </article>
+    <!-- 1. Willkommenstext -->
+    <section class="hero">
+      <div class="container">
+        <span class="label">Für Schüler ohne IT-Vorkenntnisse</span>
+        <h1>Willkommen beim Schülerpraktikum bei Accenture!</h1>
+        <p>Du hast noch nie programmiert? Perfekt – genau für dich ist dieses Praktikum gemacht. In zwei Wochen lernst du, wie ein großes IT-Unternehmen arbeitet, übst wichtige Fähigkeiten für den Beruf und baust am Ende sogar deine eigene Website.</p>
+        <p>
+          <a href="#erwartung" class="btn">Was erwartet mich?</a>
+          <a href="vorbereitung.html#bewerben" class="btn hell">Jetzt bewerben</a>
+        </p>
       </div>
     </section>
 
-    <!-- 3. Checkliste erster Tag -->
-    <section id="checkliste" class="section">
-      <h2>Checkliste für den ersten Praktikumstag</h2>
-      <p class="section__intro">Hak ab, was du schon erledigt hast.</p>
-
-      <div class="progress">
-        <div class="progress__bar"><div class="progress__fill" id="progressFill"></div></div>
-        <span class="progress__text" id="progressText">0 von 0 erledigt</span>
-      </div>
-
-      <ul class="checklist" id="checklist">
-        <li><label><input type="checkbox"> Teams installiert und Login getestet</label></li>
-        <li><label><input type="checkbox"> Kamera und Mikrofon funktionieren</label></li>
-        <li><label><input type="checkbox"> Einladungslink für den ersten Termin gefunden</label></li>
-        <li><label><input type="checkbox"> Laptop geladen, Ladekabel griffbereit</label></li>
-        <li><label><input type="checkbox"> Ruhigen Platz zum Arbeiten vorbereitet</label></li>
-        <li><label><input type="checkbox"> Block und Stift für Notizen bereitgelegt</label></li>
-        <li><label><input type="checkbox"> 10 Minuten vorher eingeloggt</label></li>
-        <li><label><input type="checkbox"> Kurze Vorstellung über mich überlegt</label></li>
-      </ul>
-      <button class="btn btn--light" id="resetChecklist">Checkliste zurücksetzen</button>
-    </section>
-
-    <!-- 4. Erfahrungen und Tipps -->
-    <section id="tipps" class="section section--grey">
-      <h2>Erfahrungen &amp; Tipps aus unserem Team</h2>
-      <div class="cards">
-        <blockquote class="quote">
-          <p>„Trau dich, Fragen zu stellen. Die Betreuer erklären alles gern, auch wenn man ganz neu ist."</p>
-          <cite>– Team D</cite>
-        </blockquote>
-        <blockquote class="quote">
-          <p>„In der Gruppe muss man sich gut absprechen. Am Anfang kurz Aufgaben verteilen spart viel Zeit."</p>
-          <cite>– Team D</cite>
-        </blockquote>
-        <blockquote class="quote">
-          <p>„Kamera an macht einen großen Unterschied. So wirkt man direkt viel motivierter."</p>
-          <cite>– Team D</cite>
-        </blockquote>
-        <blockquote class="quote">
-          <p>„Nicht perfekt sein wollen. Lieber ausprobieren, Fehler machen und daraus lernen."</p>
-          <cite>– Team D</cite>
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- 5. FAQ -->
-    <section id="faq" class="section">
-      <h2>Häufige Fragen</h2>
-      <div class="faq">
-        <div class="faq__item">
-          <button class="faq__question">Brauche ich Programmierkenntnisse?<span class="faq__icon">+</span></button>
-          <div class="faq__answer"><p>Nein. Interesse an Informatik reicht. Die Grundlagen lernst du während der Codingwoche.</p></div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question">Muss ich vor Ort sein?<span class="faq__icon">+</span></button>
-          <div class="faq__answer"><p>Nein, das Praktikum ist virtuell. Du nimmst von zu Hause aus über Microsoft Teams teil.</p></div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question">Welche Technik brauche ich?<span class="faq__icon">+</span></button>
-          <div class="faq__answer"><p>Einen Laptop oder PC mit stabiler Internetverbindung, Kamera und Mikrofon. Ein Headset ist praktisch.</p></div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question">Arbeite ich allein oder im Team?<span class="faq__icon">+</span></button>
-          <div class="faq__answer"><p>Beides. Es gibt Inputs für alle und Aufgaben, die ihr in kleinen Teams löst, zum Beispiel eine Case Study.</p></div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question">Wird das Praktikum von der Schule anerkannt?<span class="faq__icon">+</span></button>
-          <div class="faq__answer"><p>Das entscheidet deine Schule. Frag am besten früh deine Lehrkraft und bitte um eine Praktikumsbestätigung.</p></div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question">Was mache ich, wenn die Technik streikt?<span class="faq__icon">+</span></button>
-          <div class="faq__answer"><p>Ruhe bewahren, kurz neu einwählen und die Betreuer per Chat oder Mail informieren.</p></div>
+    <!-- 2. Was erwartet mich? (Erklärung des Praktikums) -->
+    <section id="erwartung">
+      <div class="container">
+        <h2>Was erwartet dich im Praktikum?</h2>
+        <p class="einleitung">Das Schülerpraktikum bei Accenture findet virtuell statt – du nimmst bequem von zu Hause aus mit deinem Laptop teil. In der ersten Woche lernst du Softskills wie Kommunikation, Teamarbeit und Präsentieren. In der zweiten Woche, der Codingwoche, baust du mit HTML, CSS und JavaScript deine ersten Webseiten und lernst, wie Teams mit Git zusammenarbeiten.</p>
+        <div class="card-reihe" style="margin-top:24px">
+          <div class="card">
+            <h3>💻 Virtuell</h3>
+            <p>Du arbeitest von zu Hause aus und triffst Betreuer und andere Schüler in Video-Calls.</p>
+          </div>
+          <div class="card">
+            <h3>🎓 Ohne Vorkenntnisse</h3>
+            <p>Wir starten bei null. Neugier und Lust auf Neues reichen völlig aus.</p>
+          </div>
+          <div class="card">
+            <h3>🤝 Im Team</h3>
+            <p>Du arbeitest wie ein echtes Entwicklungsteam an einem gemeinsamen Projekt.</p>
+          </div>
+          <div class="card">
+            <h3>🏆 Eigenes Ergebnis</h3>
+            <p>Am Ende präsentierst du eine Website, die du selbst mitgebaut hast.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 6. Kontakt / E-Mail-Button -->
-    <section class="section cta">
-      <h2>Lust bekommen?</h2>
-      <p>Schreib uns direkt eine Mail. Der Betreff ist schon eingetragen.</p>
-      <button class="btn" id="mailButton">✉️ Jetzt bewerben</button>
+    <!-- 3. Video (eingebettet mit einem iframe) -->
+    <section class="grau">
+      <div class="container">
+        <h2>Das Praktikum im Video</h2>
+        <p class="einleitung">Eine Schülerin erzählt, wie sie das virtuelle Schülerpraktikum bei Accenture erlebt hat.</p>
+        <div class="video-box">
+          <!-- Der YouTube-Player. "-FLZ0xPVOGg" ist die ID des Videos (steht in der YouTube-Adresse hinter "watch?v=") -->
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/-FLZ0xPVOGg"
+            title="Virtuelles Schülerpraktikum bei Accenture"
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+
+          <!-- Ersatz: Vorschaubild mit Link. Am Anfang versteckt (hidden).
+               JavaScript zeigt es nur, wenn die Seite per Doppelklick als Datei geöffnet wurde,
+               weil YouTube den Player dort nicht abspielt (Fehler 153). -->
+          <a class="video-vorschau" id="video-vorschau" href="https://www.youtube.com/watch?v=-FLZ0xPVOGg" target="_blank" rel="noopener" hidden>
+            <img src="https://i.ytimg.com/vi/-FLZ0xPVOGg/hqdefault.jpg" alt="Vorschaubild: Virtuelles Schülerpraktikum bei Accenture">
+            <span>▶ Video auf YouTube ansehen</span>
+          </a>
+        </div>
+        <p class="video-link">Video lädt nicht? <a href="https://www.youtube.com/watch?v=-FLZ0xPVOGg" target="_blank" rel="noopener">Direkt auf YouTube ansehen</a> (Kanal: Accenture DACH)</p>
+      </div>
+    </section>
+
+    <!-- 4. Roadmap: die Inhalte stehen im HTML, JavaScript zeigt sie beim Klick an -->
+    <section id="roadmap-bereich">
+      <div class="container">
+        <h2>Roadmap: So läuft dein Praktikum ab</h2>
+        <p class="einleitung">Wähle eine Woche und klicke auf einen Tag, um zu sehen, was dich erwartet.</p>
+
+        <div class="roadmap-wochen">
+          <button class="woche-btn aktiv" type="button" id="woche-1-btn">Woche 1 – Softskills</button>
+          <button class="woche-btn" type="button" id="woche-2-btn">Woche 2 – Coding</button>
+        </div>
+
+        <!-- Woche 1 -->
+        <ol class="roadmap" id="woche-1">
+          <li><button class="tag-btn" type="button" data-info="Begrüßung, Kennenlernen der Betreuer und der anderen Schüler, Einrichten von Microsoft Teams und eine erste Vorstellung von Accenture."><strong>Tag 1</strong><span>Kick-off</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Wie kommuniziere ich klar und freundlich – im Video-Call, im Chat und per E-Mail? Übungen in kleinen Gruppen."><strong>Tag 2</strong><span>Kommunikation</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Rollen im Team, gemeinsame Ziele und Feedback geben. Wir lösen eine Aufgabe, die nur im Team klappt."><strong>Tag 3</strong><span>Teamarbeit</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Aufbau einer guten Präsentation, Folien gestalten und frei sprechen. Jede Gruppe hält einen kurzen Vortrag."><strong>Tag 4</strong><span>Präsentieren</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Aufgaben planen und Prioritäten setzen. Abschluss der ersten Woche mit einer Feedbackrunde."><strong>Tag 5</strong><span>Zeitmanagement</span></button></li>
+        </ol>
+
+        <!-- Woche 2 (am Anfang versteckt durch das Attribut "hidden") -->
+        <ol class="roadmap" id="woche-2" hidden>
+          <li><button class="tag-btn" type="button" data-info="Wie ist eine Webseite aufgebaut? Wir schreiben unsere erste Seite mit Überschriften, Texten, Bildern und Links."><strong>Tag 6</strong><span>HTML</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Farben, Schriften, Abstände und Layout mit Flexbox – damit die Seite gut aussieht."><strong>Tag 7</strong><span>CSS</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Webseiten werden interaktiv: Buttons, die etwas tun, Variablen, Bedingungen und Funktionen."><strong>Tag 8</strong><span>JavaScript</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Wie arbeiten Entwicklerteams gemeinsam am gleichen Code? Commits, Branches und das gemeinsame Repository auf GitHub."><strong>Tag 9</strong><span>Git &amp; GitHub</span></button></li>
+          <li><button class="tag-btn" type="button" data-info="Wir setzen alles in einem Teamprojekt um und präsentieren die fertige Website."><strong>Tag 10</strong><span>Projekt &amp; Abschluss</span></button></li>
+        </ol>
+
+        <!-- Textfeld unter der Roadmap: JavaScript schreibt hier Titel und Text des angeklickten Tages hinein.
+             Die Überschrift ist am Anfang versteckt (hidden), man sieht nur den Hinweis. -->
+        <div class="tag-details" aria-live="polite">
+          <h3 id="tag-titel" hidden></h3>
+          <p id="tag-text">👆 Klicke auf einen Tag, um mehr darüber zu erfahren.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. IT-Begriffe für Anfänger (mit Suchfeld) -->
+    <section class="grau">
+      <div class="container" id="glossar-bereich">
+        <h2>IT-Begriffe einfach erklärt</h2>
+        <p class="einleitung">Viele Wörter aus der IT klingen erst einmal kompliziert. Hier findest du die wichtigsten Begriffe in einfacher Sprache.</p>
+        <!-- Suchfeld: JavaScript durchsucht beim Tippen alle Einträge mit der Klasse "suchbar" -->
+        <input type="search" class="suchfeld" id="glossar-suche" placeholder="🔍 Begriff suchen …" aria-label="Begriffe durchsuchen">
+        <!-- <dl> = Definitionsliste: <dt> ist der Begriff, <dd> die Erklärung -->
+        <dl class="glossar">
+          <div class="begriff suchbar"><dt>Code</dt><dd>Anweisungen, die ein Mensch für den Computer schreibt – wie ein Rezept, das der Computer Schritt für Schritt befolgt.</dd></div>
+          <div class="begriff suchbar"><dt>Programmiersprache</dt><dd>Eine Sprache, mit der man dem Computer sagt, was er tun soll, z. B. JavaScript oder Python.</dd></div>
+          <div class="begriff suchbar"><dt>Browser</dt><dd>Das Programm, mit dem du Webseiten öffnest, z. B. Chrome, Firefox oder Edge.</dd></div>
+          <div class="begriff suchbar"><dt>HTML</dt><dd>Baut das Gerüst einer Webseite: Überschriften, Texte, Bilder und Links.</dd></div>
+          <div class="begriff suchbar"><dt>CSS</dt><dd>Sorgt für das Aussehen einer Webseite: Farben, Schriften, Abstände und Anordnung.</dd></div>
+          <div class="begriff suchbar"><dt>JavaScript</dt><dd>Macht Webseiten interaktiv – zum Beispiel ein Button, der etwas aufklappt.</dd></div>
+          <div class="begriff suchbar"><dt>Git</dt><dd>Ein Werkzeug, das alle Änderungen am Code speichert. So kann man jederzeit zu einer älteren Version zurück.</dd></div>
+          <div class="begriff suchbar"><dt>Repository</dt><dd>Ein Projektordner, den Git verwaltet. Auf GitHub kann ein ganzes Team darauf zugreifen.</dd></div>
+          <div class="begriff suchbar"><dt>Commit</dt><dd>Ein gespeicherter Zwischenstand mit einer kurzen Beschreibung, was geändert wurde.</dd></div>
+          <div class="begriff suchbar"><dt>Bug</dt><dd>Ein Fehler im Programm. Das Finden und Beheben nennt man „Debugging“.</dd></div>
+          <div class="begriff suchbar"><dt>Cloud</dt><dd>Computer und Speicher im Internet, die man nutzen kann, ohne sie selbst zu besitzen.</dd></div>
+          <div class="begriff suchbar"><dt>Consulting</dt><dd>Beratung: Unternehmen holen sich Experten, die ihnen helfen, Probleme zu lösen – oft mit Technologie.</dd></div>
+        </dl>
+        <p class="keine-treffer" id="glossar-keine-treffer">Kein Begriff gefunden. Versuch es mit einem anderen Wort.</p>
+      </div>
+    </section>
+
+    <!-- 6. Softskills mit Bildern -->
+    <section>
+      <div class="container">
+        <h2>Softskills, die du kennenlernst</h2>
+        <p class="einleitung">Im Beruf zählt nicht nur Fachwissen. Diese Fähigkeiten üben wir im Praktikum gemeinsam.</p>
+        <div class="card-reihe">
+          <div class="card">
+            <img src="img/kommunikation.svg" alt="Symbol Sprechblase">
+            <h3>Kommunikation</h3>
+            <p>Klar und freundlich ausdrücken – im Video-Call, im Chat und per E-Mail.</p>
+          </div>
+          <div class="card">
+            <img src="img/teamarbeit.svg" alt="Symbol zwei Personen">
+            <h3>Teamarbeit</h3>
+            <p>Aufgaben aufteilen, sich gegenseitig helfen und gemeinsam ans Ziel kommen.</p>
+          </div>
+          <div class="card">
+            <img src="img/praesentieren.svg" alt="Symbol Präsentationstafel">
+            <h3>Präsentieren</h3>
+            <p>Ergebnisse verständlich vorstellen und vor anderen sicher sprechen.</p>
+          </div>
+          <div class="card">
+            <img src="img/zeitmanagement.svg" alt="Symbol Stoppuhr">
+            <h3>Zeitmanagement</h3>
+            <p>Aufgaben planen, Prioritäten setzen und Fristen einhalten.</p>
+          </div>
+          <div class="card">
+            <img src="img/feedback.svg" alt="Symbol Stern">
+            <h3>Feedback</h3>
+            <p>Konstruktive Rückmeldungen geben – und selbst daraus lernen.</p>
+          </div>
+          <div class="card">
+            <img src="img/problemloesung.svg" alt="Symbol Glühbirne">
+            <h3>Problemlösung</h3>
+            <p>Große Aufgaben in kleine Schritte zerlegen und kreativ Lösungen finden.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Wegweiser: Links zu den Bereichen der anderen Teams -->
+    <section class="grau">
+      <div class="container">
+        <h2>Wer bist du? Hier geht's zu deinem Bereich</h2>
+        <div class="card-reihe wegweiser">
+          <a href="#erwartung" class="card">
+            <h3>🌱 Ich habe noch keine IT-Erfahrung</h3>
+            <p>Du bist schon richtig! Hier auf der Startseite erfährst du, was dich erwartet.</p>
+            <span class="pfeil">Nach oben zur Übersicht ↑</span>
+          </a>
+          <a href="coding.html" class="card">
+            <h3>👩‍💻 Ich interessiere mich für IT</h3>
+            <p>Welche Technologien lernst du? Welche Übungen gibt es?</p>
+            <span class="pfeil">Zu den Coding Skills →</span>
+          </a>
+          <a href="eltern.html" class="card">
+            <h3>👨‍👩‍👧 Ich bin Elternteil</h3>
+            <p>Informationen über Accenture, Ablauf und Kontakt.</p>
+            <span class="pfeil">Zum Elternbereich →</span>
+          </a>
+          <a href="vorbereitung.html" class="card">
+            <h3>🎒 Ich habe einen Platz / will mich bewerben</h3>
+            <p>Bewerbung, Checkliste, Tipps und FAQ.</p>
+            <span class="pfeil">Zur Vorbereitung →</span>
+          </a>
+        </div>
+      </div>
     </section>
 
   </main>
 
-  <footer class="footer">
-    <p>Case Study · Codingwoche · Team D</p>
+  <!-- ===== GEMEINSAMER FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>© <span id="jahr">2026</span> Schülerprojekt im Rahmen des Accenture Schülerpraktikums</p>
+      <p><a href="index.html">Start &amp; Einsteiger</a> · <a href="coding.html">IT-Interessierte</a> · <a href="eltern.html">Eltern</a> · <a href="vorbereitung.html">Vorbereitung</a></p>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <button id="nach-oben" type="button" aria-label="Nach oben scrollen">↑</button>
+  <!-- JavaScript ganz am Ende laden, damit alle HTML-Elemente schon existieren -->
+  <script src="teama.js"></script>
 </body>
 </html>
