@@ -24,7 +24,7 @@ if (!wenigBewegung) {
 }
 
 
-// 2. Scroll-Balken oben und aktiver Link in der Navigation
+// 2. Scroll-Balken oben und aktive Sprungmarke
 const scrollBalken = document.getElementById("scroll-balken");
 
 function scrollFortschritt() {
@@ -36,13 +36,13 @@ function scrollFortschritt() {
 window.addEventListener("scroll", scrollFortschritt, { passive: true });
 scrollFortschritt();
 
-const navLinks = document.querySelectorAll(".nav-links a");
+const sprungLinks = document.querySelectorAll(".sprungmarken a");
 const bereiche = document.querySelectorAll("main section[id]");
 
 const navBeobachter = new IntersectionObserver(function (eintraege) {
     eintraege.forEach(function (eintrag) {
         if (eintrag.isIntersecting) {
-            navLinks.forEach(function (link) {
+            sprungLinks.forEach(function (link) {
                 link.classList.toggle("aktiv", link.getAttribute("href") === "#" + eintrag.target.id);
             });
         }
@@ -238,4 +238,18 @@ function konfetti() {
     }
 
     zeichnen();
+}
+
+
+// 8. Menü-Knopf auf dem Handy: klappt die Seitenlinks auf und zu
+const menueKnopf = document.getElementById("nav-burger");
+const menueLinks = document.getElementById("nav-links");
+
+if (menueKnopf && menueLinks) {
+    menueKnopf.addEventListener("click", function () {
+        const offen = menueLinks.classList.toggle("offen");
+        menueKnopf.setAttribute("aria-expanded", String(offen));
+        menueKnopf.setAttribute("aria-label", offen ? "Menü schließen" : "Menü öffnen");
+        menueKnopf.textContent = offen ? "✕" : "☰";
+    });
 }

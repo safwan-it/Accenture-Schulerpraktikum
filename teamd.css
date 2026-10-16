@@ -220,6 +220,34 @@ html {
     background: var(--flaeche);
 }
 
+/* Die Seite, auf der man gerade ist */
+.teamd .nav-links a.aktiv {
+    color: var(--lila-text);
+    background: rgba(161, 0, 255, 0.12);
+}
+
+/* Menü-Knopf für das Handy – am Computer nicht sichtbar */
+.teamd .nav-burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--rand);
+    border-radius: 50%;
+    background: var(--flaeche);
+    color: var(--text);
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.teamd .nav-burger:hover {
+    color: var(--lila-text);
+    border-color: var(--rand-hell);
+}
+
 /* ---------- Knöpfe ---------- */
 
 .teamd .knopf {
@@ -357,6 +385,33 @@ html {
     flex-wrap: wrap;
     justify-content: center;
     gap: 14px;
+}
+
+/* Sprungmarken zu den Abschnitten der Seite */
+.teamd .sprungmarken {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 36px;
+}
+
+.teamd .sprungmarken a {
+    padding: 8px 16px;
+    border: 1px solid var(--rand);
+    border-radius: 999px;
+    background: var(--flaeche);
+    color: var(--text-grau);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+
+.teamd .sprungmarken a:hover,
+.teamd .sprungmarken a.aktiv {
+    color: var(--text);
+    border-color: var(--rand-hell);
+    background: rgba(161, 0, 255, 0.08);
 }
 
 /* Maus-Symbol, das zum Scrollen einlädt */
@@ -822,6 +877,33 @@ html {
     padding: 80px 20px 40px;
 }
 
+.teamd .fuss p {
+    margin: 0;
+}
+
+/* Links zu den anderen Seiten unten in der Fußzeile */
+.teamd .fuss-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 22px;
+    margin-bottom: 16px;
+}
+
+.teamd .fuss-links a {
+    text-decoration: none;
+}
+
+.teamd .fuss-links a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.teamd .fuss-links a.aktiv {
+    color: var(--text);
+    font-weight: 600;
+}
+
 /* ---------- Einblenden beim Scrollen ---------- */
 
 .js .teamd .zeigen:not(.sichtbar) {
@@ -848,8 +930,34 @@ html {
 /* ---------- Handy ---------- */
 
 @media (max-width: 860px) {
+    .teamd .nav-burger {
+        display: inline-flex;
+    }
+
+    /* Auf dem Handy klappt die Navigation über den Menü-Knopf auf */
     .teamd .nav-links {
         display: none;
+        position: absolute;
+        top: calc(100% + 12px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 2px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.95);
+        border: 1px solid var(--rand);
+        border-radius: 24px;
+        box-shadow: var(--schatten);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+
+    .teamd .nav-links.offen {
+        display: flex;
+    }
+
+    .teamd .nav-links a {
+        padding: 12px 16px;
     }
 
     .teamd .checkliste-layout,

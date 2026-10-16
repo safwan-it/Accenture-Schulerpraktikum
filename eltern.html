@@ -1,1167 +1,191 @@
-v<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Informationen für Eltern | Accenture</title>
-
-  <style>
-    :root {
-      --purple: #A100FF;
-      --white: #FFFFFF;
-      --black: #000000;
-      --gray: #666666;
-      --border: #DDDDDD;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 25px;
-    }
-
-    body {
-      min-height: 100vh;
-      background: var(--white);
-      color: var(--black);
-      font-family: Arial, Helvetica, sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* KOPFBEREICH */
-
-    header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 10;
-      width: 100%;
-      padding: 30px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-      animation: headerAppear 0.8s ease both;
-    }
-
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--black);
-      flex-shrink: 0;
-    }
-
-    .logo-symbol {
-      color: var(--purple);
-      font-size: 64px;
-      line-height: 0.8;
-      font-weight: 900;
-      letter-spacing: -10px;
-      padding-right: 8px;
-      transition: transform 0.35s ease;
-    }
-
-    .logo-name {
-      font-size: 20px;
-      font-weight: 700;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .logo:hover .logo-symbol,
-    .logo:focus-visible .logo-symbol {
-      transform: translateY(-4px);
-    }
-
-    .logo:hover .logo-name,
-    .logo:focus-visible .logo-name {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .nav-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 0 12px 17px;
-      color: var(--black);
-      background: transparent;
-      border: none;
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: color 0.25s ease;
-      white-space: nowrap;
-    }
-
-    .nav-button:hover,
-    .nav-button:focus-visible {
-      color: var(--purple);
-    }
-
-    .nav-arrow {
-      font-size: 21px;
-      transition: transform 0.25s ease;
-    }
-
-    .nav-button:hover .nav-arrow {
-      transform: translateX(4px);
-    }
-
-    /* STARTSEITE */
-
-    main {
-      min-height: 100vh;
-      padding: 150px 5% 70px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .headline {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-weight: 900;
-      font-style: italic;
-      line-height: 0.88;
-      letter-spacing: -0.065em;
-      animation: headlineAppear 1s cubic-bezier(.2, .8, .2, 1) both;
-    }
-
-    .headline span {
-      display: block;
-      transition:
-        transform 0.65s cubic-bezier(.2, .8, .2, 1),
-        color 0.35s ease;
-    }
-
-    .information {
-      color: var(--purple);
-      font-size: clamp(2.5rem, 9.5vw, 9rem);
-    }
-
-    .fuer {
-      margin: 16px 0;
-      color: var(--black);
-      font-size: clamp(3rem, 8vw, 7rem);
-    }
-
-    .eltern {
-      color: var(--purple);
-      font-size: clamp(3.5rem, 11vw, 10rem);
-    }
-
-    .headline:hover .information {
-      transform: translateX(-5vw);
-    }
-
-    .headline:hover .fuer {
-      transform: scale(1.06);
-    }
-
-    .headline:hover .eltern {
-      transform: translateX(5vw);
-    }
-
-    .slogan {
-      max-width: 850px;
-      margin-top: 42px;
-      font-size: clamp(1rem, 2.1vw, 1.5rem);
-      line-height: 1.6;
-      font-weight: 400;
-      color: var(--black);
-      animation: sloganAppear 1s 0.35s ease both;
-    }
-
-    .purple-word {
-      color: var(--purple);
-    }
-
-    .accent-line {
-      width: 70px;
-      height: 4px;
-      margin-top: 32px;
-      background: var(--purple);
-      transform-origin: center;
-      animation: lineAppear 0.8s 0.7s ease both;
-    }
-
-    /* ANIMATIONEN */
-
-    @keyframes headerAppear {
-      from {
-        opacity: 0;
-        transform: translateY(-15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes headlineAppear {
-      from {
-        opacity: 0;
-        transform: translateY(35px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes sloganAppear {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes lineAppear {
-      from {
-        opacity: 0;
-        transform: scaleX(0);
-      }
-      to {
-        opacity: 1;
-        transform: scaleX(1);
-      }
-    }
-
-    /* INHALTSBEREICHE */
-
-    .content-section {
-      width: 100%;
-      padding: 75px 8%;
-      background: var(--white);
-      text-align: left;
-    }
-
-    .section-heading {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 38px;
-    }
-
-    /* Nummer und Überschrift sind gleich groß und lila */
-
-    .section-number {
-      color: var(--purple);
-      font-size: clamp(1.5rem, 3vw, 2.3rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.2;
-      white-space: nowrap;
-    }
-
-    .section-heading h2 {
-      color: var(--purple);
-      font-size: clamp(1.5rem, 3vw, 2.3rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.2;
-    }
-
-    /* Die Trennlinie neben den Überschriften wurde entfernt */
-
-    .section-heading::after {
-      content: none;
-      display: none;
-    }
-
-    /* ÜBER UNS */
-
-    .about-section {
-      background: var(--white);
-    }
-
-    .about-text {
-      max-width: 1050px;
-      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
-      line-height: 1.9;
-      color: #333333;
-    }
-
-    .about-text strong {
-      color: var(--purple);
-      font-weight: 700;
-    }
-
-    /* PRAKTIKUM ZUM MITMACHEN */
-
-    .participation-section {
-      background: var(--white);
-    }
-
-    .participation-intro {
-      max-width: 850px;
-      margin-bottom: 35px;
-      color: #333333;
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    .participation-intro strong {
-      color: var(--purple);
-    }
-
-    /* SCHLICHTE BOXEN */
-
-    .tile-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .info-tile {
-      display: block;
-      min-width: 0;
-      min-height: 105px;
-      padding: 23px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 0;
-      text-decoration: none;
-      color: var(--black);
-      transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
-    }
-
-    .info-tile:hover,
-    .info-tile:focus-visible {
-      transform: translateY(-3px);
-      border-color: var(--purple);
-      outline: none;
-    }
-
-    /* Icons werden nicht angezeigt */
-
-    .tile-icon {
-      display: none;
-    }
-
-    .tile-text {
-      min-width: 0;
-    }
-
-    .tile-text h3 {
-      margin-bottom: 8px;
-      font-size: 18px;
-      line-height: 1.35;
-      color: var(--black);
-    }
-
-    .tile-text p {
-      color: #444444;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    /* TABELLE */
-
-    .table-wrapper {
-      width: 100%;
-      overflow-x: auto;
-      border: 1px solid var(--border);
-      border-radius: 0;
-      background: var(--white);
-    }
-
-    .internship-table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      line-height: 1.8;
-    }
-
-    .internship-table th {
-      padding: 20px 24px;
-      color: var(--white);
-      background: var(--purple);
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    .internship-table td {
-      padding: 22px 24px;
-      color: #333333;
-      border-top: 1px solid var(--border);
-      vertical-align: top;
-      font-size: 16px;
-    }
-
-    .internship-table td:first-child {
-      width: 32%;
-      color: var(--black);
-      font-weight: 700;
-    }
-
-    .internship-table tbody tr {
-      transition: background-color 0.25s ease;
-    }
-
-    .internship-table tbody tr:hover {
-      background: #F8F8F8;
-    }
-
-    /* PRAKTIKUMSZEITEN */
-
-    .hours-section {
-      background: var(--white);
-    }
-
-    .hours-intro {
-      margin-bottom: 24px;
-      color: #333333;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    .hours-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      list-style: none;
-    }
-
-    /* Praktikumszeiten-Boxen im gleichen Stil wie die anderen Boxen */
-
-    .hours-list li {
-      display: block;
-      padding: 20px;
-      background: var(--white);
-      border: 1px solid var(--border);
-      color: #333333;
-      font-size: 16px;
-      line-height: 1.7;
-      transition:
-        transform 0.3s ease,
-        border-color 0.3s ease;
-    }
-
-    .hours-list li:hover {
-      transform: translateY(-3px);
-      border-color: var(--purple);
-    }
-
-    /* Häkchen entfernen */
-
-    .hours-list li::before {
-      content: none;
-      display: none;
-    }
-
-    .hours-list strong {
-      color: var(--black);
-    }
-
-    /* LERNINHALTE */
-
-    .skills-section {
-      background: var(--white);
-    }
-
-    .skills-intro {
-      max-width: 850px;
-      margin-bottom: 30px;
-      color: #333333;
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    /* KONTAKT */
-
-    .contact-section {
-      background: var(--white);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-      gap: 40px;
-      align-items: start;
-    }
-
-    .contact-info h3 {
-      margin-bottom: 25px;
-      font-size: 23px;
-    }
-
-    .contact-item {
-      margin-bottom: 25px;
-    }
-
-    .contact-item strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--purple);
-      font-size: 14px;
-      letter-spacing: 0.5px;
-    }
-
-    .contact-item p,
-    .contact-item a {
-      color: #333333;
-      font-size: 16px;
-      line-height: 1.8;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-item a {
-      text-decoration: none;
-      text-decoration-color: var(--purple);
-      text-underline-offset: 4px;
-      transition: color 0.25s ease;
-    }
-
-    .contact-item a:hover,
-    .contact-item a:focus-visible {
-      color: var(--purple);
-      text-decoration: underline;
-    }
-
-    .contact-note {
-      margin-top: 25px;
-      padding: 17px;
-      border: 1px solid var(--border);
-      background: var(--white);
-      color: #444444;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .map-container {
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 0;
-    }
-
-    .map-container iframe {
-      display: block;
-      width: 100%;
-      height: 350px;
-      border: 0;
-    }
-
-    .map-caption {
-      padding: 15px 18px;
-      background: var(--white);
-      color: #444444;
-      font-size: 13px;
-      line-height: 1.7;
-      border-top: 1px solid var(--border);
-    }
-
-    .map-caption strong {
-      color: var(--black);
-    }
-
-    /* INHALTSVERZEICHNIS */
-
-    .contents {
-      padding: 25px 8%;
-      background: var(--white);
-    }
-
-    /* Inhaltsverzeichnis bekommt die Nummer 01 */
-
-    .contents .section-heading {
-      margin-bottom: 20px;
-    }
-
-    .contents-title {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
-      color: var(--purple);
-      font-size: clamp(1.5rem, 3vw, 2.3rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.2;
-    }
-
-    .contents-number {
-      color: var(--purple);
-      font-size: clamp(1.5rem, 3vw, 2.3rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.2;
-    }
-
-    .contents-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .contents-links a {
-      display: inline-block;
-      padding: 8px 12px;
-      color: var(--black);
-      border: 1px solid var(--border);
-      text-decoration: none;
-      font-size: 13px;
-      transition: border-color 0.25s ease;
-    }
-
-    .contents-links a:hover,
-    .contents-links a:focus-visible {
-      border-color: var(--purple);
-      outline: none;
-    }
-
-    /* FUSSZEILE */
-
-    footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 25px 8%;
-      background: var(--white);
-      color: #666666;
-      font-size: 13px;
-    }
-
-    footer a {
-      color: var(--black);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: var(--purple);
-    }
-
-    /* SCROLL-ANIMATIONEN */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-      .content-section {
-        padding: 60px 6%;
-      }
-
-      .contents {
-        padding: 25px 6%;
-      }
-
-      .tile-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding: 22px 5%;
-      }
-
-      .logo-symbol {
-        font-size: 48px;
-      }
-
-      .logo-name {
-        display: none;
-      }
-
-      nav {
-        gap: 8px;
-      }
-
-      .nav-button {
-        padding: 10px 0 10px 5px;
-        font-size: 13px;
-        gap: 5px;
-      }
-
-      main {
-        padding: 125px 4% 50px;
-      }
-
-      .headline {
-        letter-spacing: -0.055em;
-      }
-
-      .information {
-        font-size: clamp(2.1rem, 9vw, 3.8rem);
-      }
-
-      .fuer {
-        margin: 12px 0;
-      }
-
-      .slogan {
-        margin-top: 30px;
-      }
-
-      .headline:hover .information {
-        transform: translateX(-2vw);
-      }
-
-      .headline:hover .eltern {
-        transform: translateX(2vw);
-      }
-
-      .content-section {
-        padding: 45px 6%;
-      }
-
-      .section-heading {
-        gap: 10px;
-        margin-bottom: 27px;
-      }
-
-      /* Nummer und Überschrift bleiben auch auf dem Handy gleich groß */
-
-      .section-number,
-      .section-heading h2,
-      .contents-title,
-      .contents-number {
-        font-size: 21px;
-      }
-
-      .section-heading::after {
-        display: none;
-      }
-
-      .tile-grid,
-      .hours-list {
-        grid-template-columns: 1fr;
-      }
-
-      .info-tile {
-        min-height: 88px;
-        padding: 18px;
-      }
-
-      .map-container iframe {
-        height: 290px;
-      }
-
-      .internship-table th,
-      .internship-table td {
-        padding: 15px 12px;
-        font-size: 14px;
-      }
-
-      .internship-table td:first-child {
-        width: 38%;
-      }
-
-      .contents {
-        padding: 22px 6%;
-      }
-
-      footer {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 22px 6%;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  </style>
+  <title>Eltern | Accenture Schülerpraktikum</title>
+  <meta name="description" content="Informationen für Eltern über das virtuelle Accenture Schülerpraktikum: Ablauf, Praktikumszeiten, Lerninhalte und Kontakt.">
+  <!-- gemeinsames Design für alle Seiten -->
+  <link rel="stylesheet" href="teama.css">
 </head>
-
 <body>
 
-  <!-- KOPFBEREICH -->
-
-  <header>
-    <a class="logo"
-       href="https://www.accenture.com/de-de"
-       target="_blank"
-       rel="noopener noreferrer"
-       aria-label="Accenture-Website öffnen">
-      <span class="logo-symbol" aria-hidden="true">&gt;</span>
-      <span class="logo-name">Accenture</span>
-    </a>
-
-    <nav aria-label="Hauptnavigation">
-      <a class="nav-button" href="#startseite">
-        <span>Startseite</span>
-        <span class="nav-arrow" aria-hidden="true">&gt;</span>
-      </a>
+  <!-- ===== GEMEINSAME NAVIGATION (auf allen 4 Seiten gleich) ===== -->
+  <header class="navbar">
+    <nav class="container" aria-label="Hauptnavigation">
+      <a href="index.html" class="logo">accenture<span>&gt;</span> Schülerpraktikum</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Start &amp; Einsteiger</a></li>
+        <li><a href="coding.html">IT-Interessierte</a></li>
+        <li><a href="eltern.html" class="aktiv">Eltern</a></li>
+        <li><a href="vorbereitung.html">Vorbereitung</a></li>
+      </ul>
+      <div class="nav-aktionen">
+        <button id="dark-btn" class="icon-btn" type="button" aria-label="Dunklen Modus aktivieren">🌙</button>
+        <button id="menu-btn" class="icon-btn" type="button" aria-label="Menü öffnen" aria-expanded="false">☰</button>
+      </div>
     </nav>
   </header>
 
-  <!-- STARTSEITE -->
+  <main>
 
-  <main id="startseite">
-    <h1 class="headline">
-      <span class="information">INFORMATIONEN</span>
-      <span class="fuer">FÜR</span>
-      <span class="eltern">ELTERN</span>
-    </h1>
-
-    <p class="slogan">
-      Entdecke deine
-      <span class="purple-word">Möglichkeiten.</span>
-      <br>
-      Gestalte deine
-      <span class="purple-word">Zukunft.</span>
-    </p>
-
-    <div class="accent-line" aria-hidden="true"></div>
-  </main>
-
-  <!-- 01 – INHALTSVERZEICHNIS -->
-
-  <nav class="contents" aria-label="Inhaltsverzeichnis">
-    <div class="contents-title">
-      <span class="contents-number">01</span>
-      <span>Inhaltsverzeichnis</span>
-    </div>
-
-    <div class="contents-links">
-      <a href="#ueber-uns">Über uns</a>
-      <a href="#praktikum">Das Praktikum</a>
-      <a href="#praktikumszeiten">Praktikumszeiten</a>
-      <a href="#ablauf">Ablauf</a>
-      <a href="#faehigkeiten">Lerninhalte</a>
-      <a href="#kontakt">Kontakt und Standort</a>
-    </div>
-  </nav>
-
-  <!-- 02 – ÜBER UNS -->
-
-  <section class="content-section about-section reveal" id="ueber-uns">
-    <div class="section-heading">
-      <span class="section-number">02</span>
-      <h2>Über uns</h2>
-    </div>
-
-    <p class="about-text">
-      <em>
-        Wir bei Accenture sind eine
-        <strong>weltweit tätige Unternehmensberatung</strong>,
-        die Unternehmen in den Bereichen
-        <strong>Strategie, Technologie, Digitalisierung und Innovation</strong>
-        unterstützt. Mit rund
-        <strong>780.000 Mitarbeitenden in über 120 Ländern</strong>
-        verbinden wir Fachwissen mit modernster Technologie, um
-        <strong>nachhaltige Lösungen</strong>
-        zu entwickeln und die Zukunft aktiv mitzugestalten.
-      </em>
-    </p>
-  </section>
-
-  <!-- 03 – EIN PRAKTIKUM ZUM MITMACHEN -->
-
-  <section class="content-section participation-section reveal" id="praktikum">
-    <div class="section-heading">
-      <span class="section-number">03</span>
-      <h2>Ein Praktikum zum Mitmachen</h2>
-    </div>
-
-    <p class="participation-intro">
-      Das Praktikum verbindet neue Einblicke mit praktischer Erfahrung.
-      Die Teilnehmenden arbeiten mit unterschiedlichen Betreuer:innen,
-      bearbeiten Aufgaben allein und im Team und setzen ihre Ideen
-      in eigenen Projekten um.
-    </p>
-
-    <div class="tile-grid">
-
-      <a class="info-tile" href="#praktikumszeiten">
-        <div class="tile-text">
-          <h3>Praktikumszeiten</h3>
-          <p>Zeiten und Pausen im Überblick.</p>
-        </div>
-      </a>
-
-      <a class="info-tile" href="#faehigkeiten">
-        <div class="tile-text">
-          <h3>Digitale Fähigkeiten</h3>
-          <p>Einblicke in Coding und Webanwendungen.</p>
-        </div>
-      </a>
-
-      <a class="info-tile" href="#ablauf">
-        <div class="tile-text">
-          <h3>Zusammenarbeit</h3>
-          <p>Einzelaufgaben und Teamprojekte.</p>
-        </div>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- 04 – PRAKTIKUMSZEITEN -->
-
-  <section class="content-section hours-section reveal" id="praktikumszeiten">
-    <div class="section-heading">
-      <span class="section-number">04</span>
-      <h2>Praktikumszeiten</h2>
-    </div>
-
-    <p class="hours-intro">
-      Die geplanten täglichen Zeiten im Überblick:
-    </p>
-
-    <ul class="hours-list">
-      <li>
-        <strong>Montag bis Donnerstag</strong><br>
-        09:00–16:00 Uhr
-      </li>
-      <li>
-        <strong>Freitag</strong><br>
-        09:00–15:00 Uhr
-      </li>
-      <li>
-        <strong>Mittagspause</strong><br>
-        12:00–13:00 Uhr
-      </li>
-      <li>
-        <strong>Zusätzliche Pausen</strong><br>
-        Kurze Pausen während des Tages
-      </li>
-    </ul>
-  </section>
-
-  <!-- 05 – ABLAUF DES PRAKTIKUMS -->
-
-  <section class="content-section participation-section reveal" id="ablauf">
-    <div class="section-heading">
-      <span class="section-number">05</span>
-      <h2>So wird das Praktikum gestaltet</h2>
-    </div>
-
-    <p class="participation-intro">
-      Je nach Thema begleiten unterschiedliche Betreuer:innen die
-      Teilnehmenden. Neben Workshops gibt es praktische Aufgaben,
-      Fallstudien und gemeinsame Projektarbeit.
-    </p>
-
-    <div class="tile-grid">
-
-      <article class="info-tile">
-        <div class="tile-text">
-          <h3>Workshops</h3>
-          <p>Neue Themen kennenlernen und gemeinsam Lösungen erarbeiten.</p>
-        </div>
-      </article>
-
-      <article class="info-tile">
-        <div class="tile-text">
-          <h3>Case Studies</h3>
-          <p>Praxisnahe Fragestellungen analysieren und Lösungsansätze entwickeln.</p>
-        </div>
-      </article>
-
-      <article class="info-tile">
-        <div class="tile-text">
-          <h3>Eigene Projekte</h3>
-          <p>Ideen allein oder im Team in ein konkretes Ergebnis umsetzen.</p>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- 06 – WAS WIRD VERMITTELT? -->
-
-  <section class="content-section skills-section reveal" id="faehigkeiten">
-    <div class="section-heading">
-      <span class="section-number">06</span>
-      <h2>Was wird vermittelt?</h2>
-    </div>
-
-    <p class="skills-intro">
-      Das Praktikum vermittelt grundlegende Kompetenzen für digitale
-      Projekte – von der Zusammenarbeit bis zur Entwicklung einfacher
-      Webanwendungen.
-    </p>
-
-    <div class="table-wrapper">
-      <table class="internship-table">
-        <thead>
-          <tr>
-            <th>Bereich</th>
-            <th>Was wird vermittelt?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Webentwicklung</td>
-            <td>
-              Grundlagen von HTML, CSS und JavaScript kennenlernen
-              und für eigene digitale Anwendungen einsetzen.
-            </td>
-          </tr>
-          <tr>
-            <td>Digitale Lösungen</td>
-            <td>
-              Ideen entwickeln, Probleme analysieren und einfache
-              technische Lösungen praktisch umsetzen.
-            </td>
-          </tr>
-          <tr>
-            <td>Zusammenarbeit</td>
-            <td>
-              Präsentieren, Aufgaben organisieren und gemeinsam
-              an Projekten arbeiten.
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- 07 – KONTAKT UND STANDORT -->
-
-  <section class="content-section contact-section reveal" id="kontakt">
-    <div class="section-heading">
-      <span class="section-number">07</span>
-      <h2>Kontakt und Standort</h2>
-    </div>
-
-    <div class="contact-grid">
-
-      <div class="contact-info">
-        <h3>Fragen zum Praktikum?</h3>
-
-        <div class="contact-item">
-          <strong>ANSPRECHPARTNERIN</strong>
-          <p>Meike Molnar</p>
-        </div>
-
-        <div class="contact-item">
-          <strong>E-MAIL</strong>
-          <a href="mailto:meike.molnar@accenture.com">
-            meike.molnar@accenture.com
-          </a>
-        </div>
-
-        <div class="contact-item">
-          <strong>TELEFON – ACCENTURE CAMPUS KRONBERG</strong>
-          <a href="tel:+4961739499">+49 6173 9499</a>
-        </div>
-
-        <div class="contact-item">
-          <strong>UNTERNEHMENSSTANDORT</strong>
-          <p>
-            Accenture – Campus Kronberg<br>
-            Campus Kronberg 1<br>
-            61476 Kronberg im Taunus
-          </p>
-        </div>
-
-        <p class="contact-note">
-          Hinweis: Das Schülerpraktikum findet ausschließlich virtuell
-          statt. Die Adresse bezeichnet den Unternehmensstandort,
-          nicht einen Praktikumsort vor Ort.
+    <!-- 1. Willkommenstext -->
+    <section class="hero">
+      <div class="container">
+        <span class="label">Für Eltern</span>
+        <h1>Informationen für Eltern</h1>
+        <p>Was Ihr Kind im virtuellen Schülerpraktikum bei Accenture erlebt, welche Zeiten gelten und an wen Sie sich bei Fragen wenden können.</p>
+        <p>
+          <a href="#kontakt" class="btn">Kontakt und Standort</a>
+          <a href="#praktikumszeiten" class="btn hell">Praktikumszeiten</a>
         </p>
       </div>
+    </section>
 
-      <div class="map-container">
-        <iframe
-          src="https://maps.google.com/maps?q=Campus%20Kronberg%201%2C%2061476%20Kronberg%20im%20Taunus&t=&z=14&ie=UTF8&iwloc=&output=embed"
-          title="Karte: Accenture Campus Kronberg"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          allowfullscreen>
-        </iframe>
+    <!-- 2. Über uns -->
+    <section id="ueber-uns">
+      <div class="container">
+        <h2>Über uns</h2>
+        <p class="einleitung">
+          Wir bei Accenture sind eine <strong>weltweit tätige Unternehmensberatung</strong>, die Unternehmen in den Bereichen
+          <strong>Strategie, Technologie, Digitalisierung und Innovation</strong> unterstützt. Mit rund
+          <strong>780.000 Mitarbeitenden in über 120 Ländern</strong> verbinden wir Fachwissen mit modernster Technologie,
+          um <strong>nachhaltige Lösungen</strong> zu entwickeln und die Zukunft aktiv mitzugestalten.
+        </p>
+      </div>
+    </section>
 
-        <div class="map-caption">
-          <strong>Accenture Campus Kronberg</strong><br>
-          Campus Kronberg 1, 61476 Kronberg im Taunus
-          <br>
-          Das Praktikum selbst findet virtuell statt.
+    <!-- 3. Ein Praktikum zum Mitmachen -->
+    <section class="grau" id="praktikum">
+      <div class="container">
+        <h2>Ein Praktikum zum Mitmachen</h2>
+        <p class="einleitung">Das Praktikum verbindet neue Einblicke mit praktischer Erfahrung. Die Teilnehmenden arbeiten mit unterschiedlichen Betreuer:innen, bearbeiten Aufgaben allein und im Team und setzen ihre Ideen in eigenen Projekten um.</p>
+        <div class="card-reihe" style="margin-top:24px">
+          <a class="card" href="#praktikumszeiten">
+            <h3>Praktikumszeiten</h3>
+            <p>Zeiten und Pausen im Überblick.</p>
+          </a>
+          <a class="card" href="#vermittelt">
+            <h3>Digitale Fähigkeiten</h3>
+            <p>Einblicke in Coding und Webanwendungen.</p>
+          </a>
+          <a class="card" href="#ablauf">
+            <h3>Zusammenarbeit</h3>
+            <p>Einzelaufgaben und Teamprojekte.</p>
+          </a>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- 4. Praktikumszeiten -->
+    <section id="praktikumszeiten">
+      <div class="container">
+        <h2>Praktikumszeiten</h2>
+        <p class="einleitung">Die geplanten täglichen Zeiten im Überblick:</p>
+        <div class="zahlen">
+          <div class="zahl"><b>09:00–16:00</b><span>Montag bis Donnerstag</span></div>
+          <div class="zahl"><b>09:00–15:00</b><span>Freitag</span></div>
+          <div class="zahl"><b>12:00–13:00</b><span>Mittagspause</span></div>
+        </div>
+        <p class="einleitung">Zusätzlich gibt es kurze Pausen während des Tages.</p>
+      </div>
+    </section>
 
-  <!-- FUSSZEILE -->
+    <!-- 5. Ablauf -->
+    <section class="grau" id="ablauf">
+      <div class="container">
+        <h2>So wird das Praktikum gestaltet</h2>
+        <p class="einleitung">Je nach Thema begleiten unterschiedliche Betreuer:innen die Teilnehmenden. Neben Workshops gibt es praktische Aufgaben, Fallstudien und gemeinsame Projektarbeit.</p>
+        <ol class="ablauf" style="margin-top:24px">
+          <li>
+            <h3>Workshops</h3>
+            <p>Neue Themen kennenlernen und gemeinsam Lösungen erarbeiten.</p>
+          </li>
+          <li>
+            <h3>Case Studies</h3>
+            <p>Praxisnahe Fragestellungen analysieren und Lösungsansätze entwickeln.</p>
+          </li>
+          <li>
+            <h3>Eigene Projekte</h3>
+            <p>Ideen allein oder im Team in ein konkretes Ergebnis umsetzen.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
 
+    <!-- 6. Was wird vermittelt? -->
+    <section id="vermittelt">
+      <div class="container">
+        <h2>Was wird vermittelt?</h2>
+        <p class="einleitung">Das Praktikum vermittelt grundlegende Kompetenzen für digitale Projekte – von der Zusammenarbeit bis zur Entwicklung einfacher Webanwendungen.</p>
+        <table class="verwendung">
+          <thead>
+            <tr>
+              <th>Bereich</th>
+              <th>Was wird vermittelt?</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Webentwicklung</td>
+              <td>Grundlagen von HTML, CSS und JavaScript kennenlernen und für eigene digitale Anwendungen einsetzen.</td>
+            </tr>
+            <tr>
+              <td>Digitale Lösungen</td>
+              <td>Ideen entwickeln, Probleme analysieren und einfache technische Lösungen praktisch umsetzen.</td>
+            </tr>
+            <tr>
+              <td>Zusammenarbeit</td>
+              <td>Präsentieren, Aufgaben organisieren und gemeinsam an Projekten arbeiten.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 7. Kontakt und Standort -->
+    <section class="grau" id="kontakt">
+      <div class="container">
+        <h2>Kontakt und Standort</h2>
+        <div class="kontakt">
+          <address>
+            <h3>Fragen zum Praktikum?</h3>
+            <p><strong>Ansprechpartnerin:</strong> Meike Molnar</p>
+            <p><strong>E-Mail:</strong> <a href="mailto:meike.molnar@accenture.com">meike.molnar@accenture.com</a></p>
+            <p><strong>Telefon:</strong> <a href="tel:+4961739499">+49 6173 9499</a></p>
+            <p>
+              <strong>Unternehmensstandort:</strong><br>
+              Accenture – Campus Kronberg<br>
+              Campus Kronberg 1<br>
+              61476 Kronberg im Taunus
+            </p>
+            <p class="hinweis">Das Schülerpraktikum findet ausschließlich virtuell statt. Die Adresse bezeichnet den Unternehmensstandort, nicht einen Praktikumsort vor Ort.</p>
+          </address>
+          <div class="karte">
+            <iframe
+              src="https://maps.google.com/maps?q=Campus%20Kronberg%201%2C%2061476%20Kronberg%20im%20Taunus&t=&z=14&ie=UTF8&iwloc=&output=embed"
+              title="Karte: Accenture Campus Kronberg"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== GEMEINSAMER FOOTER ===== -->
   <footer>
-    <span>Informationen für Eltern · Accenture</span>
-    <a
-      href="https://www.accenture.com/de-de"
-      target="_blank"
-      rel="noopener noreferrer">
-      Zur offiziellen Accenture-Website →
-    </a>
+    <div class="container">
+      <p>© <span id="jahr">2026</span> Schülerprojekt im Rahmen des Accenture Schülerpraktikums</p>
+      <p><a href="index.html">Start &amp; Einsteiger</a> · <a href="coding.html">IT-Interessierte</a> · <a href="eltern.html">Eltern</a> · <a href="vorbereitung.html">Vorbereitung</a></p>
+    </div>
   </footer>
 
-  <!-- SCROLL-ANIMATIONEN -->
-
-  <script>
-    const revealElements = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(
-        (entries, observerInstance) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observerInstance.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.12 }
-      );
-
-      revealElements.forEach(element => observer.observe(element));
-    } else {
-      revealElements.forEach(element => element.classList.add("visible"));
-    }
-  </script>
-
+  <button id="nach-oben" type="button" aria-label="Nach oben scrollen">↑</button>
+  <!-- JavaScript ganz am Ende laden, damit alle HTML-Elemente schon existieren -->
+  <script src="teama.js"></script>
 </body>
 </html>

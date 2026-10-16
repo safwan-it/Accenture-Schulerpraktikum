@@ -137,9 +137,11 @@ function mehrAnzeigenEinrichten() {
       if (text.classList.contains("offen")) {
         text.classList.remove("offen");
         knopf.textContent = "Mehr anzeigen ▼";
+        knopf.setAttribute("aria-expanded", "false");
       } else {
         text.classList.add("offen");
         knopf.textContent = "Weniger anzeigen ▲";
+        knopf.setAttribute("aria-expanded", "true");
       }
     });
   }
@@ -203,7 +205,7 @@ function roadmapEinrichten() {
   // Startzustand des Textfeldes: nur der Hinweis, keine Überschrift
   function hinweisZeigen() {
     titel.hidden = true;
-    text.textContent = "👆 Klicke auf einen Tag, um mehr darüber zu erfahren.";
+    text.textContent = "Klicke auf einen Tag, um mehr darüber zu erfahren.";
   }
 }
 
@@ -339,7 +341,7 @@ function checklisteEinrichten() {
 
     anzeige.textContent = erledigt + " von " + kaestchen.length + " erledigt";
     if (prozent === 100) {
-      anzeige.textContent = anzeige.textContent + " – du bist bereit! 🎉";
+      anzeige.textContent = anzeige.textContent + " – du bist bereit!";
     }
   }
 }
@@ -386,6 +388,30 @@ function jahrEinsetzen() {
 }
 
 
+/* ---------- 13. Antwort-Buttons (Rätsel auf der Coding-Seite) ---------- */
+function antwortAnzeigenEinrichten() {
+  const knoepfe = document.querySelectorAll(".antwort-btn");
+
+  for (const knopf of knoepfe) {
+    knopf.addEventListener("click", function () {
+      // das Antwortbild liegt in derselben Karte wie der Button
+      const karte = knopf.parentElement;
+      const bild = karte.querySelector(".antwort-bild");
+
+      if (bild.classList.contains("offen")) {
+        bild.classList.remove("offen");
+        knopf.textContent = "Antwort anzeigen";
+        knopf.setAttribute("aria-expanded", "false");
+      } else {
+        bild.classList.add("offen");
+        knopf.textContent = "Antwort verstecken";
+        knopf.setAttribute("aria-expanded", "true");
+      }
+    });
+  }
+}
+
+
 /* ---------- Start: alle Funktionen ausführen ---------- */
 darkModeEinrichten();
 menueEinrichten();
@@ -399,4 +425,5 @@ uebungsFilterEinrichten();
 checklisteEinrichten();
 faqEinrichten();
 emailButtonEinrichten();
+antwortAnzeigenEinrichten();
 jahrEinsetzen();
