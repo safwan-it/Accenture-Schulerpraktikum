@@ -1,0 +1,369 @@
+/* =========================================================
+   Accenture Student Internship Portal – gemeinsames Stylesheet
+   Verantwortlich: Project Lead (Änderungen nur nach Absprache!)
+   Aufbau:
+     1. Variablen (Farben, Schriften)   – GEMEINSAM
+     2. Grundlayout, Navigation, Footer – GEMEINSAM
+     3. Bausteine (Cards, Buttons, ...) – GEMEINSAM
+     4. Team A – Startseite
+     5. Team B – Coding Skills
+     6. Team C – Eltern
+     7. Team D – Vorbereitung
+     8. Responsive & Extras
+   ========================================================= */
+ 
+/* ---------- 1. Variablen ---------- */
+:root {
+  --lila: #a100ff;          /* Akzentfarbe */
+  --lila-dunkel: #7500c0;
+  --lila-hell: #f3e6ff;
+  --text: #1d1d24;
+  --text-leise: #5a5a6a;
+  --hintergrund: #ffffff;
+  --flaeche: #f6f5f9;
+  --rand: #e2dfea;
+  --schatten: 0 4px 16px rgba(30, 0, 60, 0.08);
+  --radius: 12px;
+  --schrift: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --breite: 1100px;
+}
+ 
+/* Dark Mode (wird per JavaScript über die Klasse "dark" am <html> gesetzt) */
+html.dark {
+  --lila: #c266ff;
+  --lila-dunkel: #a100ff;
+  --lila-hell: #2c1a3d;
+  --text: #ecebf2;
+  --text-leise: #a9a7b8;
+  --hintergrund: #14131a;
+  --flaeche: #1e1c26;
+  --rand: #34313f;
+  --schatten: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+ 
+/* ---------- 2. Grundlayout ---------- */
+* { box-sizing: border-box; }
+ 
+/* Elemente mit dem Attribut "hidden" immer verstecken (auch wenn sie sonst display: flex haben) */
+[hidden] { display: none !important; }
+ 
+html { scroll-behavior: smooth; }
+ 
+body {
+  margin: 0;
+  font-family: var(--schrift);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--hintergrund);
+  transition: background 0.3s, color 0.3s;
+}
+ 
+img { max-width: 100%; display: block; }
+ 
+a { color: var(--lila-dunkel); }
+html.dark a { color: var(--lila); }
+ 
+h1, h2, h3 { line-height: 1.25; }
+h2 { font-size: 1.8rem; margin-top: 0; }
+h2::after {               /* kleiner lila Strich unter jeder Überschrift */
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 8px;
+  background: var(--lila);
+  border-radius: 2px;
+}
+ 
+.container {
+  max-width: var(--breite);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+ 
+section { padding: 56px 0; }
+section.grau { background: var(--flaeche); }
+ 
+.einleitung { color: var(--text-leise); max-width: 750px; }
+ 
+/* Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--hintergrund);
+  border-bottom: 1px solid var(--rand);
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+}
+.logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: var(--text) !important;
+}
+.logo span { color: var(--lila); }
+ 
+.nav-links {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  display: block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+.nav-links a:hover { background: var(--lila-hell); }
+.nav-links a.aktiv { background: var(--lila); color: #fff; }
+ 
+.nav-aktionen { display: flex; gap: 8px; align-items: center; }
+ 
+.icon-btn {
+  border: 1px solid var(--rand);
+  background: var(--flaeche);
+  color: var(--text);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.icon-btn:hover { border-color: var(--lila); }
+#menu-btn { display: none; }
+ 
+/* Seitenkopf (Hero) */
+.hero {
+  background: linear-gradient(135deg, #460073 0%, #a100ff 100%);
+  color: #fff;
+  padding: 72px 0;
+}
+.hero h1 { font-size: 2.6rem; margin: 0 0 16px; }
+.hero p { font-size: 1.15rem; max-width: 680px; opacity: 0.95; }
+.hero .label {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+ 
+/* Footer */
+footer {
+  background: #1d1d24;
+  color: #cfcde0;
+  padding: 32px 0;
+  font-size: 0.95rem;
+}
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+footer a { color: #e2c4ff !important; }
+ 
+/* ---------- 3. Bausteine ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: 2px solid var(--lila);
+  background: var(--lila);
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+}
+.btn:hover { transform: translateY(-2px); background: var(--lila-dunkel); }
+.btn.hell { background: transparent; color: var(--lila-dunkel) !important; }
+.hero .btn.hell { color: #fff !important; border-color: #fff; }
+ 
+/* Card-Raster mit Flexbox */
+.card-reihe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.card {
+  /* flex: wachsen schrumpfen Startbreite → jede Karte startet bei 220px und wird dann gleichmäßig breiter */
+  flex: 1 1 220px;
+  background: var(--hintergrund);
+  border: 1px solid var(--rand);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--schatten);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(100, 0, 160, 0.15); }
+.card img { width: 64px; height: 64px; margin-bottom: 12px; }
+.card h3 { margin: 0 0 8px; }
+.card p { margin: 0; color: var(--text-leise); }
+ 
+ 
+/* Suchfeld */
+.suchfeld {
+  width: 100%;
+  max-width: 420px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2px solid var(--rand);
+  border-radius: 8px;
+  background: var(--hintergrund);
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.suchfeld:focus { outline: none; border-color: var(--lila); }
+.keine-treffer { display: none; color: var(--text-leise); font-style: italic; }
+ 
+/* Back to Top */
+#nach-oben {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--lila);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: var(--schatten);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+#nach-oben.sichtbar { opacity: 1; pointer-events: auto; }
+ 
+/* ---------- 4. Team A – Startseite ---------- */
+  /* aspect-ratio hält das Video immer im Breitbild-Format 16:9 */
+.video-box {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--schatten);
+}
+.video-box iframe { width: 100%; height: 100%; border: 0; }
+.video-link { margin-top: 12px; color: var(--text-leise); font-size: 0.95rem; }
+/* Vorschaubild, wenn die Seite als Datei geöffnet wird (siehe main.js) */
+.video-vorschau { position: relative; display: block; height: 100%; }
+.video-vorschau img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+.video-vorschau span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: var(--lila);
+  color: #fff;
+  font-weight: 700;
+}
+.video-vorschau:hover span { background: var(--lila-dunkel); }
+ 
+/* Roadmap */
+.roadmap-wochen { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+.woche-btn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 2px solid var(--lila);
+  background: transparent;
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+}
+.woche-btn.aktiv { background: var(--lila); color: #fff; }
+ 
+.roadmap {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.roadmap li { flex: 1; }
+.tag-btn {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding: 16px;
+  border-radius: var(--radius);
+  border: 2px solid var(--rand);
+  background: var(--hintergrund);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.tag-btn:hover { border-color: var(--lila); transform: translateY(-2px); }
+/* "aktiv" setzt JavaScript beim angeklickten Tag */
+.tag-btn.aktiv { border-color: var(--lila); background: var(--lila-hell); }
+.tag-btn strong { display: block; color: var(--lila-dunkel); font-size: 0.85rem; }
+html.dark .tag-btn strong { color: var(--lila); }
+.tag-btn span { display: block; font-weight: 700; margin-top: 4px; }
+ 
+.tag-details {
+  margin-top: 16px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--hintergrund);
+  border: 1px solid var(--rand);
+  min-height: 90px;
+}
+.tag-details h3 { margin-top: 0; }
+ 
+/* Glossar */
+.glossar { display: flex; flex-wrap: wrap; gap: 16px; }
+.begriff {
+  flex: 1 1 300px;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  border: 1px solid var(--rand);
+}
+.begriff dt { font-weight: 800; color: var(--lila-dunkel); }
+html.dark .begriff dt { color: var(--lila); }
+.begriff dd { margin: 4px 0 0; }
+ 
+/* Bereich-Wegweiser */
+.wegweiser .card { text-decoration: none; color: var(--text); }
+.wegweiser .card .pfeil { display: inline-block; margin-top: 12px; font-weight: 700; color: var(--lila-dunkel); }
+ 
+/* ---------- 8. Responsive (Smartphone) ---------- */
+@media (max-width: 860px) {
+  #menu-btn { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    padding: 12px 16px;
+    background: var(--hintergrund);
+    border-bottom: 1px solid var(--rand);
+  }
+  .nav-links.offen { display: flex; }
+  .roadmap { flex-direction: column; }
+  .hero h1 { font-size: 2rem; }
+}
