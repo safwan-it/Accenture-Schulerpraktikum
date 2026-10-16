@@ -1,42 +1,237 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-    <title>Wie ihr euch Vorbereiten könnt</title>
-    <style>
-
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alles, was ihr für einen starken Start ins virtuelle Schülerpraktikum braucht – von Team D.">
+    <meta name="theme-color" content="#faf7ff">
+    <title>Team D – Vorbereitung auf das Praktikum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+    <link rel="stylesheet" href="teamd.css">
+    <script src="teamd.js" defer></script>
 </head>
-<body>
-    <h1>Das benötigt ihr für das Praktikum</h1>
-    <p>Die Grundausstattung für das Praktikum umfasst:</p>
-    <ul>
-        <li>Ein Laptop oder PC mit Internetzugang</li>
-        <li>Ein funktionierendes Headset mit Mikrofon sowie eine Webcam</li>
-        <li>Die Installation von Visual Studio Code, Git und den Microsoft-Tools</li>
-        <li>Grundkenntnisse in den relevanten Programmiersprachen und Technologien</li>
-    </ul>
-    <p>Hier sind einige Tipps, wie ihr euch auf das Praktikum vorbereiten könnt:</p>
-    <ul>
-        <li>Meldet euch bei den benötigten Programmen an</li>
-        <li>Informiert euch über die Unternehmenskultur und Werte</li>
-        <li>Checkt eure Internetverbindung</li>
-        <li>Bei Fragen wendet euch an <a href="mailto:info@accenture.com">info@accenture.com</a></li>
-    </ul>
-    <p>Hier sind einige Erfahrungen und Tipps von ehemaligen Praktikanten:</p>
-    <ul>
-        <li>Seid offen für neue Herausforderungen und lernt kontinuierlich dazu</li>
-        <li>Kommuniziert regelmäßig mit eurem Team und euren Mentoren</li>
-        <li>Nutze die Gelegenheit, um wertvolle Kontakte zu knüpfen</li>
-        <li>Lasst euch auf Gruppenarbeiten und Projekte ein</li>
-    </ul>
-    <p>Häufig gestellte Fragen:</p>
-    <ul>
-        <li><strong>Muss ich schon Programmiererfahrung haben?</strong><br>Nein, das lernst du während des Praktikums</li>
-        <li><strong>Arebeiten wir hauptsächlich in Gruppen oder einzeln?</strong><br>Wir arbeiten hauptsächlich in Gruppen, aber es gibt auch einzelne Aufgaben</li>
-        <li><strong>Wie sieht ein typischer Praktikumstag aus?</strong><br>Der Tag startet mit einem kurzen Team-Meeting, danach arbeitet ihr an euren Aufgaben und Projekten.</li>
-        <li><strong>Kann ich während des Praktikums Fragen stellen?</strong><br>Ja, jederzeit! Eure Mentoren und das Team helfen euch gerne weiter.</li>
-        <li><strong>Kann ich mich nach dem Praktikum bei Accenture bewerben?</strong><br>Ja, das Praktikum ist ein guter Einstieg. Viele nutzen die Kontakte später für eine Bewerbung auf eine Ausbildung oder ein duales Studium.</li>
-    </ul>
-    <a href="schuelerpraktikum@accenture.com">Bewerbung virtuelles Schülerpraktikum</a>
+<body class="teamd">
+
+    <!-- Balken oben, der beim Scrollen wächst -->
+    <div class="scroll-balken" id="scroll-balken" aria-hidden="true"></div>
+
+    <!-- Animierter Hintergrund -->
+    <div class="hintergrund" aria-hidden="true">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="gitter"></div>
+    </div>
+
+    <!-- Konfetti, wenn die Checkliste fertig ist -->
+    <canvas class="konfetti" id="konfetti" aria-hidden="true"></canvas>
+
+    <!-- Navigation -->
+    <header class="nav">
+        <a class="logo" href="#start">Team<span>D</span></a>
+        <nav class="nav-links" aria-label="Hauptnavigation">
+            <a href="#bewerbung">Bewerbung</a>
+            <a href="#ausstattung">Ausstattung</a>
+            <a href="#checkliste">Checkliste</a>
+            <a href="#tipps">Tipps</a>
+            <a href="#faq">FAQ</a>
+        </nav>
+        <a class="knopf knopf-klein" href="mailto:schuelerpraktikum@accenture.com?subject=Bewerbung%20virtuelles%20Sch%C3%BClerpraktikum">Bewerben</a>
+    </header>
+
+    <main>
+
+        <!-- Startbereich -->
+        <section class="hero" id="start">
+            <p class="badge"><span class="punkt"></span> Virtuelles Schülerpraktikum</p>
+            <h1>
+                <span class="unsichtbar">Bereit für das Praktikum?</span>
+                <span aria-hidden="true">Bereit für<br><span class="verlauf wechsel" id="wechselwort">Code.</span></span>
+            </h1>
+            <p class="hero-text">
+                Ihr habt einen Platz bekommen oder wollt euch bewerben? Hier ist alles,
+                was ihr für einen starken Start ins Praktikum braucht.
+            </p>
+            <div class="hero-knoepfe">
+                <a class="knopf" href="mailto:schuelerpraktikum@accenture.com?subject=Bewerbung%20virtuelles%20Sch%C3%BClerpraktikum">Jetzt bewerben <span aria-hidden="true">→</span></a>
+                <a class="knopf knopf-rand" href="#checkliste">Zur Checkliste</a>
+            </div>
+            <a class="scroll-hinweis" href="#bewerbung" aria-label="Nach unten scrollen"><span></span></a>
+        </section>
+
+        <!-- 1. Bewerbung -->
+        <section class="bereich" id="bewerbung">
+            <div class="kopf zeigen">
+                <p class="kicker">01 — Bewerbung</p>
+                <h2>So läuft die Bewerbung ab</h2>
+            </div>
+            <ol class="schritte">
+                <li class="karte zeigen">
+                    <span class="nummer">1</span>
+                    <h3>Button klicken</h3>
+                    <p>Klickt auf „Jetzt bewerben“ – euer E-Mail-Programm öffnet sich automatisch.</p>
+                </li>
+                <li class="karte zeigen">
+                    <span class="nummer">2</span>
+                    <h3>Kurz vorstellen</h3>
+                    <p>Schreibt, wer ihr seid, in welche Klasse ihr geht und warum ihr mitmachen wollt.</p>
+                </li>
+                <li class="karte zeigen">
+                    <span class="nummer">3</span>
+                    <h3>Abschicken &amp; warten</h3>
+                    <p>Schickt die E-Mail ab und wartet auf eine Antwort – schaut auch im Spam-Ordner nach.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- 2. Ausstattung -->
+        <section class="bereich" id="ausstattung">
+            <div class="kopf zeigen">
+                <p class="kicker">02 — Ausstattung</p>
+                <h2>Das benötigt ihr</h2>
+            </div>
+            <div class="kacheln">
+                <div class="karte zeigen">
+                    <span class="symbol" aria-hidden="true">💻</span>
+                    <h3>Laptop oder PC</h3>
+                    <p>Mit stabilem Internetzugang.</p>
+                </div>
+                <div class="karte zeigen">
+                    <span class="symbol" aria-hidden="true">🎧</span>
+                    <h3>Headset &amp; Webcam</h3>
+                    <p>Mit funktionierendem Mikrofon.</p>
+                </div>
+                <div class="karte zeigen">
+                    <span class="symbol" aria-hidden="true">🛠️</span>
+                    <h3>Software</h3>
+                    <p>Visual Studio Code, Git und die Microsoft-Tools.</p>
+                </div>
+                <div class="karte zeigen">
+                    <span class="symbol" aria-hidden="true">🧠</span>
+                    <h3>Grundwissen</h3>
+                    <p>In den relevanten Programmiersprachen und Technologien.</p>
+                </div>
+            </div>
+            <div class="karte vorbereitung zeigen">
+                <h3>So bereitet ihr euch vor</h3>
+                <ul class="pfeil-liste">
+                    <li>Meldet euch bei den benötigten Programmen an</li>
+                    <li>Informiert euch über die Unternehmenskultur und Werte</li>
+                    <li>Checkt eure Internetverbindung</li>
+                    <li>Bei Fragen schreibt an <a href="mailto:info@accenture.com">info@accenture.com</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. Checkliste erster Tag -->
+        <section class="bereich" id="checkliste">
+            <div class="kopf zeigen">
+                <p class="kicker">03 — Checkliste</p>
+                <h2>Startklar für den ersten Tag?</h2>
+            </div>
+            <div class="checkliste-layout">
+                <div class="karte ring-box zeigen" id="ring-box">
+                    <div class="ring">
+                        <svg viewBox="0 0 120 120" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="ring-verlauf" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="#a100ff"/>
+                                    <stop offset="100%" stop-color="#ff3fb4"/>
+                                </linearGradient>
+                            </defs>
+                            <circle class="ring-spur" cx="60" cy="60" r="52"/>
+                            <circle class="ring-fortschritt" id="ring-fortschritt" cx="60" cy="60" r="52"/>
+                        </svg>
+                        <div class="ring-zahl">
+                            <strong id="prozent">0%</strong>
+                        </div>
+                    </div>
+                    <p class="fortschritt" id="fortschritt" aria-live="polite">0 von 6 erledigt</p>
+                    <button type="button" class="knopf-text" id="zuruecksetzen">Zurücksetzen</button>
+                </div>
+                <div class="aufgaben-liste">
+                    <label class="aufgabe-zeile zeigen"><input type="checkbox" class="aufgabe"><span class="haken"></span> Laptop geladen</label>
+                    <label class="aufgabe-zeile zeigen"><input type="checkbox" class="aufgabe"><span class="haken"></span> Internetverbindung getestet</label>
+                    <label class="aufgabe-zeile zeigen"><input type="checkbox" class="aufgabe"><span class="haken"></span> Headset und Webcam ausprobiert</label>
+                    <label class="aufgabe-zeile zeigen"><input type="checkbox" class="aufgabe"><span class="haken"></span> In allen Programmen angemeldet</label>
+                    <label class="aufgabe-zeile zeigen"><input type="checkbox" class="aufgabe"><span class="haken"></span> Ruhigen Arbeitsplatz eingerichtet</label>
+                    <label class="aufgabe-zeile zeigen"><input type="checkbox" class="aufgabe"><span class="haken"></span> Pünktlich online</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Tipps -->
+        <section class="bereich" id="tipps">
+            <div class="kopf zeigen">
+                <p class="kicker">04 — Tipps</p>
+                <h2>Von ehemaligen Praktikanten</h2>
+            </div>
+            <div class="tipps-raster">
+                <div class="karte tipp zeigen">
+                    <span class="zitat" aria-hidden="true">”</span>
+                    <p>Seid offen für neue Herausforderungen und lernt kontinuierlich dazu.</p>
+                </div>
+                <div class="karte tipp zeigen">
+                    <span class="zitat" aria-hidden="true">”</span>
+                    <p>Kommuniziert regelmäßig mit eurem Team und euren Mentoren.</p>
+                </div>
+                <div class="karte tipp zeigen">
+                    <span class="zitat" aria-hidden="true">”</span>
+                    <p>Nutzt die Gelegenheit, um wertvolle Kontakte zu knüpfen.</p>
+                </div>
+                <div class="karte tipp zeigen">
+                    <span class="zitat" aria-hidden="true">”</span>
+                    <p>Lasst euch auf Gruppenarbeiten und Projekte ein.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. FAQ -->
+        <section class="bereich" id="faq">
+            <div class="kopf zeigen">
+                <p class="kicker">05 — FAQ</p>
+                <h2>Häufig gestellte Fragen</h2>
+            </div>
+            <div class="faq-liste zeigen">
+                <div class="frage">
+                    <button type="button" class="frage-knopf" aria-expanded="false">Muss ich schon Programmiererfahrung haben?<span class="plus" aria-hidden="true"></span></button>
+                    <div class="antwort"><div><p>Nein, das lernt ihr während des Praktikums.</p></div></div>
+                </div>
+                <div class="frage">
+                    <button type="button" class="frage-knopf" aria-expanded="false">Arbeiten wir hauptsächlich in Gruppen oder einzeln?<span class="plus" aria-hidden="true"></span></button>
+                    <div class="antwort"><div><p>Wir arbeiten hauptsächlich in Gruppen, aber es gibt auch einzelne Aufgaben.</p></div></div>
+                </div>
+                <div class="frage">
+                    <button type="button" class="frage-knopf" aria-expanded="false">Wie sieht ein typischer Praktikumstag aus?<span class="plus" aria-hidden="true"></span></button>
+                    <div class="antwort"><div><p>Der Tag startet mit einem kurzen Team-Meeting, danach arbeitet ihr an euren Aufgaben und Projekten.</p></div></div>
+                </div>
+                <div class="frage">
+                    <button type="button" class="frage-knopf" aria-expanded="false">Kann ich während des Praktikums Fragen stellen?<span class="plus" aria-hidden="true"></span></button>
+                    <div class="antwort"><div><p>Ja, jederzeit! Eure Mentoren und das Team helfen euch gerne weiter.</p></div></div>
+                </div>
+                <div class="frage">
+                    <button type="button" class="frage-knopf" aria-expanded="false">Kann ich mich nach dem Praktikum bei Accenture bewerben?<span class="plus" aria-hidden="true"></span></button>
+                    <div class="antwort"><div><p>Ja, das Praktikum ist ein guter Einstieg. Viele nutzen die Kontakte später für eine Bewerbung auf eine Ausbildung oder ein duales Studium.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Abschluss mit E-Mail-Button -->
+        <section class="bereich">
+            <div class="karte cta zeigen">
+                <h2>Seid ihr dabei?</h2>
+                <p>Ein paar Sätze reichen – wir freuen uns auf eure Bewerbung.</p>
+                <a class="knopf knopf-gross" href="mailto:schuelerpraktikum@accenture.com?subject=Bewerbung%20virtuelles%20Sch%C3%BClerpraktikum"><span aria-hidden="true">✉️</span> Jetzt bewerben</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="fuss">
+        <p>Gemacht von <strong>Team D</strong> · Virtuelles Schülerpraktikum</p>
+    </footer>
+
 </body>
 </html>
