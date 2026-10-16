@@ -12,13 +12,6 @@
    ========================================================= */
 
 
-/* ---------- Einstellungen (vom Betreuer auszufüllen) ---------- */
-
-// Empfängeradresse für den Bewerbungs-Button (wird vom Betreuer bereitgestellt).
-const BEWERBUNG_EMAIL = "";
-const BEWERBUNG_BETREFF = "Bewerbung virtuelles Schülerpraktikum";
-
-
 /* ---------- Hilfsfunktionen: im Browser speichern und laden ---------- */
 // localStorage merkt sich Werte, auch wenn man die Seite schließt.
 // "try/catch" bedeutet: Versuche es – und falls der Browser das Speichern verbietet,
@@ -228,8 +221,8 @@ function videoErsatzEinrichten() {
 }
 
 
-/* ---------- 7. Suchfeld (Team A Glossar + Team D FAQ) ---------- */
-// Eine Funktion für beide Suchen. Man gibt ihr drei Dinge mit:
+/* ---------- 7. Suchfeld (Glossar auf der Startseite) ---------- */
+// Man gibt der Funktion drei Dinge mit:
 //   suchfeldId   → das Eingabefeld
 //   eintraege    → alle Einträge, die durchsucht werden
 //   hinweisId    → der Text "Nichts gefunden"
@@ -266,35 +259,7 @@ function sucheEinrichten(suchfeldId, eintraegeSelektor, hinweisId) {
 }
 
 
-/* ---------- 8. Filter für Übungen (Team B) ---------- */
-function uebungsFilterEinrichten() {
-  const knoepfe = document.querySelectorAll(".filter-btn");
-  const uebungen = document.querySelectorAll(".uebung");
-
-  for (const knopf of knoepfe) {
-    knopf.addEventListener("click", function () {
-      // Markierung nur beim angeklickten Filter-Button
-      for (const andererKnopf of knoepfe) {
-        andererKnopf.classList.remove("aktiv");
-      }
-      knopf.classList.add("aktiv");
-
-      const filter = knopf.dataset.filter; // z. B. "js" aus data-filter="js"
-
-      for (const uebung of uebungen) {
-        // data-thema="html css js git" enthält alle Themen einer Übung
-        if (filter === "alle" || uebung.dataset.thema.includes(filter)) {
-          uebung.style.display = "";
-        } else {
-          uebung.style.display = "none";
-        }
-      }
-    });
-  }
-}
-
-
-/* ---------- 9. Checkliste mit Fortschrittsbalken (Team D) ---------- */
+/* ---------- 8. Checkliste mit Fortschrittsbalken (Team D) ---------- */
 function checklisteEinrichten() {
   const kaestchen = document.querySelectorAll(".checkliste input");
   const balken = document.querySelector("#fortschritt-balken");
@@ -347,7 +312,7 @@ function checklisteEinrichten() {
 }
 
 
-/* ---------- 10. FAQ zum Auf- und Zuklappen (Team D) ---------- */
+/* ---------- 9. FAQ zum Auf- und Zuklappen (Team D) ---------- */
 function faqEinrichten() {
   const fragen = document.querySelectorAll(".faq-frage");
 
@@ -367,19 +332,7 @@ function faqEinrichten() {
 }
 
 
-/* ---------- 11. E-Mail-Button (Team D) ---------- */
-// "mailto:" öffnet das E-Mail-Programm. encodeURIComponent wandelt Leerzeichen und Umlaute
-// so um, dass sie in einer Adresse erlaubt sind (z. B. Leerzeichen → %20).
-function emailButtonEinrichten() {
-  const knopf = document.querySelector("#bewerben-btn");
-  if (!knopf) {
-    return;
-  }
-  knopf.href = "mailto:" + BEWERBUNG_EMAIL + "?subject=" + encodeURIComponent(BEWERBUNG_BETREFF);
-}
-
-
-/* ---------- 12. Aktuelles Jahr im Footer (gemeinsam) ---------- */
+/* ---------- 10. Aktuelles Jahr im Footer (gemeinsam) ---------- */
 function jahrEinsetzen() {
   const jahr = document.querySelector("#jahr");
   if (jahr) {
@@ -388,7 +341,7 @@ function jahrEinsetzen() {
 }
 
 
-/* ---------- 13. Antwort-Buttons (Rätsel auf der Coding-Seite) ---------- */
+/* ---------- 11. Antwort-Buttons (Rätsel auf der Coding-Seite) ---------- */
 function antwortAnzeigenEinrichten() {
   const knoepfe = document.querySelectorAll(".antwort-btn");
 
@@ -420,10 +373,7 @@ mehrAnzeigenEinrichten();
 roadmapEinrichten();
 videoErsatzEinrichten();
 sucheEinrichten("#glossar-suche", "#glossar-bereich .suchbar", "#glossar-keine-treffer");
-sucheEinrichten("#faq-suche", "#faq-bereich .suchbar", "#faq-keine-treffer");
-uebungsFilterEinrichten();
 checklisteEinrichten();
 faqEinrichten();
-emailButtonEinrichten();
 antwortAnzeigenEinrichten();
 jahrEinsetzen();
