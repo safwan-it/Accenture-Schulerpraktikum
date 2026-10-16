@@ -45,6 +45,18 @@ h3 {
   text-align: center;
 }
 
+/* Navigation */
+nav {
+    background: var(--weiss);
+    border-bottom: 3px solid var(--lila);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 12px;
+    position: sticky;
+    z-index: 10;
+    top: 0;
 .hero__label {
   display: inline-block;
   background: var(--lila);
