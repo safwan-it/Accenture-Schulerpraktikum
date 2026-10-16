@@ -1,116 +1,348 @@
-/* ===== Gemeinsames Design (Vorschlag für alle Teams) ===== */
+/* ===== Grundeinstellungen ===== */
 :root {
-    --lila: #A100FF;
-    --lila-dunkel: #7500C0;
-    --lila-sehr-dunkel: #460073;
-    --lila-hell: #F3E6FF;
-    --weiss: #FFFFFF;
-    --text: #1F1A2E;
-    --grau: #6B6680;
+  --lila: #a100ff;
+  --lila-dunkel: #7500c0;
+  --schwarz: #1a1a1a;
+  --grau: #f4f2f7;
+  --text: #333;
+  --radius: 12px;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--weiss);
-    color: var(--text);
-    line-height: 1.6;
-}
-
-/* Header */
-header {
-    background: linear-gradient(135deg, var(--lila-sehr-dunkel), var(--lila));
-    color: var(--weiss);
-    padding: 50px 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.4rem;
-}
-
-header p {
-    margin: 10px 0 0;
-    opacity: 0.9;
-}
-
-/* Navigation */
-nav {
-    background: var(--weiss);
-    border-bottom: 3px solid var(--lila);
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding: 12px;
-    position: sticky;
-    top: 0;
-}
-
-nav a {
-    color: var(--lila-sehr-dunkel);
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 20px;
-}
-
-nav a:hover,
-nav a.active {
-    background: var(--lila);
-    color: var(--weiss);
-}
-
-/* Inhalt */
-main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-section {
-    margin: 50px 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.6;
 }
 
 h2 {
-    color: var(--lila-dunkel);
+  font-size: 1.8rem;
+  color: var(--schwarz);
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: var(--schwarz);
+  margin-bottom: 0.4rem;
+}
+
+/* ===== Kopfbereich ===== */
+.hero {
+  background: linear-gradient(135deg, var(--schwarz) 0%, var(--lila-dunkel) 100%);
+  color: #fff;
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+}
+
+.hero__label {
+  display: inline-block;
+  background: var(--lila);
+  padding: 0.2rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.hero__text {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.hero__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+.hero__nav a {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  transition: background 0.2s;
+}
+
+.hero__nav a:hover {
+  background: var(--lila);
+  border-color: var(--lila);
+}
+
+/* ===== Abschnitte ===== */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem;
+}
+
+.section--grey {
+  max-width: none;
+  background: var(--grau);
+}
+
+.section--grey > * {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section--grey > h2 {
+  margin-bottom: 1.5rem;
+}
+
+.section__intro {
+  margin-top: -1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* ===== Bewerbungsschritte ===== */
+.steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.2rem;
+}
+
+.step {
+  border-left: 4px solid var(--lila);
+  padding: 1rem 1rem 1rem 1.2rem;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.step__nr {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--lila);
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 0.6rem;
+}
+
+/* ===== Karten (Flexbox) ===== */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.card,
+.quote {
+  flex: 1 1 220px;
+  background: #fff;
+  padding: 1.3rem;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s;
+}
+
+.card:hover,
+.quote:hover {
+  transform: translateY(-4px);
+}
+
+.quote {
+  border-top: 4px solid var(--lila);
+  font-style: italic;
+}
+
+.quote cite {
+  display: block;
+  margin-top: 0.8rem;
+  font-style: normal;
+  font-weight: bold;
+  color: var(--lila-dunkel);
+}
+
+/* ===== Checkliste ===== */
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.progress__bar {
+  flex: 1;
+  height: 10px;
+  background: var(--grau);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress__fill {
+  height: 100%;
+  width: 0;
+  background: var(--lila);
+  transition: width 0.3s;
+}
+
+.progress__text {
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.checklist {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.checklist label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid #e0dbe8;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.checklist input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--lila);
+}
+
+.checklist label.erledigt {
+  background: #f3e6ff;
+  text-decoration: line-through;
+  color: #777;
+}
+
+/* ===== FAQ ===== */
+.faq__item {
+  border-bottom: 1px solid #e0dbe8;
+}
+
+.faq__question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 1rem 0;
+  font-size: 1.05rem;
+  font-weight: bold;
+  text-align: left;
+  color: var(--schwarz);
+  cursor: pointer;
+}
+
+.faq__question:hover {
+  color: var(--lila);
+}
+
+.faq__icon {
+  font-size: 1.5rem;
+  color: var(--lila);
+  transition: transform 0.2s;
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq__answer p {
+  padding-bottom: 1rem;
+}
+
+.faq__item.offen .faq__icon {
+  transform: rotate(45deg);
+}
+
+/* ===== Buttons ===== */
+.btn {
+  background: var(--lila);
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn:hover {
+  background: var(--lila-dunkel);
+}
+
+.btn--light {
+  background: none;
+  color: var(--lila-dunkel);
+  border: 1px solid var(--lila);
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+.btn--light:hover {
+  background: var(--grau);
+}
+
+/* ===== Call to Action ===== */
+.cta {
+  text-align: center;
+  background: var(--schwarz);
+  color: #fff;
+  max-width: none;
+}
+
+.cta h2 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.cta p {
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+/* ===== Fußzeile ===== */
+.footer {
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* ===== Handy-Ansicht ===== */
+@media (max-width: 600px) {
+  .hero h1 {
     font-size: 1.8rem;
-    border-left: 6px solid var(--lila);
-    padding-left: 12px;
-}
+  }
 
-/* Footer */
-footer {
-    background: var(--lila-sehr-dunkel);
-    color: var(--weiss);
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-}
-
-.card-icon img[alt="HTML Logo"] {
-    width: 80px;
-    height: 80px;
-}
-
-.card-icon img[alt="CSS Logo"] {
-    width: 55px;
-    height: 55px;
-}
-
-.card-icon img[alt="JavaScript Logo"] {
-    width: 65px;
-    height: 65px;
-}
-
-.card-icon img[alt="Git Logo"] {
-    width: 65px;
-    height: 65px;
+  h2 {
+    font-size: 1.4rem;
+  }
 }
